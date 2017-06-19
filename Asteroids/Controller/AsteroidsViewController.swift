@@ -10,17 +10,15 @@ import UIKit
 
 class AsteroidsViewController: UIViewController {
 
+    @IBOutlet weak var asteroidsListTableView: UITableView!
+    @IBOutlet var dataService: AsteroidsListDataService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.asteroidsListTableView.dataSource = dataService
+        self.asteroidsListTableView.delegate = dataService
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 
 }

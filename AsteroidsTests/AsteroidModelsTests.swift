@@ -1,6 +1,6 @@
 //
-//  AsteroidsTests.swift
-//  AsteroidsTests
+//  AsteroidModelsTests.swift
+//  Asteroids
 //
 //  Created by olegshamin on 19/06/2017.
 //  Copyright © 2017 olegshamin. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Asteroids
 
-class AsteroidsTests: XCTestCase {
+class AsteroidModelsTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

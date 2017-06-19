@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD0E1EF835A800E8985D /* SettingsViewController.swift */; };
+		8325BD121EF8362C00E8985D /* AsteroidsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD111EF8362C00E8985D /* AsteroidsListTableViewCell.swift */; };
+		8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */; };
+		8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */; };
+		8325BD1A1EF8453700E8985D /* AsteroidsListDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD191EF8453700E8985D /* AsteroidsListDataServiceTests.swift */; };
 		9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917421EF7E584003B6F25 /* AppDelegate.swift */; };
 		9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917461EF7E584003B6F25 /* Main.storyboard */; };
 		9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917491EF7E584003B6F25 /* Assets.xcassets */; };
 		9A19174D1EF7E584003B6F25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A19174B1EF7E584003B6F25 /* LaunchScreen.storyboard */; };
-		9A1917581EF7E584003B6F25 /* AsteroidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917571EF7E584003B6F25 /* AsteroidsTests.swift */; };
-		9A1917631EF7E584003B6F25 /* AsteroidsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917621EF7E584003B6F25 /* AsteroidsUITests.swift */; };
+		9A1917581EF7E584003B6F25 /* AsteroidModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917571EF7E584003B6F25 /* AsteroidModelsTests.swift */; };
 		9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917721EF7E5B6003B6F25 /* Asteroid.swift */; };
 		9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917741EF7E5D7003B6F25 /* AsteroidViewModel.swift */; };
 		9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917771EF7E5FF003B6F25 /* Constants.swift */; };
@@ -27,16 +31,14 @@
 			remoteGlobalIDString = 9A19173E1EF7E584003B6F25;
 			remoteInfo = Asteroids;
 		};
-		9A19175F1EF7E584003B6F25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A1917371EF7E584003B6F25 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9A19173E1EF7E584003B6F25;
-			remoteInfo = Asteroids;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8325BD0E1EF835A800E8985D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
+		8325BD111EF8362C00E8985D /* AsteroidsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidsListTableViewCell.swift; path = View/AsteroidsListTableViewCell.swift; sourceTree = "<group>"; };
+		8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsViewControllerTests.swift; sourceTree = "<group>"; };
+		8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidsListDataService.swift; path = Controller/AsteroidsListDataService.swift; sourceTree = "<group>"; };
+		8325BD191EF8453700E8985D /* AsteroidsListDataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsListDataServiceTests.swift; sourceTree = "<group>"; };
 		9A19173F1EF7E584003B6F25 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1917421EF7E584003B6F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1917471EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,11 +46,8 @@
 		9A19174C1EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A19174E1EF7E584003B6F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1917531EF7E584003B6F25 /* AsteroidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsteroidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A1917571EF7E584003B6F25 /* AsteroidsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidsTests.swift; sourceTree = "<group>"; };
+		9A1917571EF7E584003B6F25 /* AsteroidModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidModelsTests.swift; sourceTree = "<group>"; };
 		9A1917591EF7E584003B6F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A19175E1EF7E584003B6F25 /* AsteroidsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsteroidsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A1917621EF7E584003B6F25 /* AsteroidsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidsUITests.swift; sourceTree = "<group>"; };
-		9A1917641EF7E584003B6F25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A1917721EF7E5B6003B6F25 /* Asteroid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asteroid.swift; path = Model/Asteroid.swift; sourceTree = "<group>"; };
 		9A1917741EF7E5D7003B6F25 /* AsteroidViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidViewModel.swift; path = ViewModel/AsteroidViewModel.swift; sourceTree = "<group>"; };
 		9A1917771EF7E5FF003B6F25 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Resources/Constants.swift; sourceTree = "<group>"; };
@@ -70,22 +69,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A19175B1EF7E584003B6F25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8325BD101EF8360D00E8985D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8325BD111EF8362C00E8985D /* AsteroidsListTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8325BD131EF838A300E8985D /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				9A1917571EF7E584003B6F25 /* AsteroidModelsTests.swift */,
+			);
+			name = TestModels;
+			sourceTree = "<group>";
+		};
+		8325BD141EF838C600E8985D /* TestControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */,
+				8325BD191EF8453700E8985D /* AsteroidsListDataServiceTests.swift */,
+			);
+			name = TestControllers;
+			sourceTree = "<group>";
+		};
 		9A1917361EF7E584003B6F25 = {
 			isa = PBXGroup;
 			children = (
 				9A1917411EF7E584003B6F25 /* Asteroids */,
 				9A1917561EF7E584003B6F25 /* AsteroidsTests */,
-				9A1917611EF7E584003B6F25 /* AsteroidsUITests */,
 				9A1917401EF7E584003B6F25 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,7 +111,6 @@
 			children = (
 				9A19173F1EF7E584003B6F25 /* Asteroids.app */,
 				9A1917531EF7E584003B6F25 /* AsteroidsTests.xctest */,
-				9A19175E1EF7E584003B6F25 /* AsteroidsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +118,7 @@
 		9A1917411EF7E584003B6F25 /* Asteroids */ = {
 			isa = PBXGroup;
 			children = (
+				8325BD101EF8360D00E8985D /* View */,
 				9A1917791EF7FCFB003B6F25 /* Controller */,
 				9A1917761EF7E5DB003B6F25 /* Resources */,
 				9A1917711EF7E59B003B6F25 /* ViewModel */,
@@ -114,19 +130,11 @@
 		9A1917561EF7E584003B6F25 /* AsteroidsTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A1917571EF7E584003B6F25 /* AsteroidsTests.swift */,
+				8325BD141EF838C600E8985D /* TestControllers */,
+				8325BD131EF838A300E8985D /* TestModels */,
 				9A1917591EF7E584003B6F25 /* Info.plist */,
 			);
 			path = AsteroidsTests;
-			sourceTree = "<group>";
-		};
-		9A1917611EF7E584003B6F25 /* AsteroidsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9A1917621EF7E584003B6F25 /* AsteroidsUITests.swift */,
-				9A1917641EF7E584003B6F25 /* Info.plist */,
-			);
-			path = AsteroidsUITests;
 			sourceTree = "<group>";
 		};
 		9A1917701EF7E595003B6F25 /* Model */ = {
@@ -162,6 +170,8 @@
 			children = (
 				9A1917421EF7E584003B6F25 /* AppDelegate.swift */,
 				9A19177A1EF7FD31003B6F25 /* AsteroidsViewController.swift */,
+				8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */,
+				8325BD0E1EF835A800E8985D /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -204,24 +214,6 @@
 			productReference = 9A1917531EF7E584003B6F25 /* AsteroidsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9A19175D1EF7E584003B6F25 /* AsteroidsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9A19176D1EF7E584003B6F25 /* Build configuration list for PBXNativeTarget "AsteroidsUITests" */;
-			buildPhases = (
-				9A19175A1EF7E584003B6F25 /* Sources */,
-				9A19175B1EF7E584003B6F25 /* Frameworks */,
-				9A19175C1EF7E584003B6F25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9A1917601EF7E584003B6F25 /* PBXTargetDependency */,
-			);
-			name = AsteroidsUITests;
-			productName = AsteroidsUITests;
-			productReference = 9A19175E1EF7E584003B6F25 /* AsteroidsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -237,11 +229,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					9A1917521EF7E584003B6F25 = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9A19173E1EF7E584003B6F25;
-					};
-					9A19175D1EF7E584003B6F25 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9A19173E1EF7E584003B6F25;
@@ -263,7 +250,6 @@
 			targets = (
 				9A19173E1EF7E584003B6F25 /* Asteroids */,
 				9A1917521EF7E584003B6F25 /* AsteroidsTests */,
-				9A19175D1EF7E584003B6F25 /* AsteroidsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -286,13 +272,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A19175C1EF7E584003B6F25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -300,11 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8325BD121EF8362C00E8985D /* AsteroidsListTableViewCell.swift in Sources */,
 				9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */,
 				9A19177B1EF7FD31003B6F25 /* AsteroidsViewController.swift in Sources */,
 				9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */,
 				9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */,
 				9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */,
+				8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */,
+				8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,15 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A1917581EF7E584003B6F25 /* AsteroidsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A19175A1EF7E584003B6F25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A1917631EF7E584003B6F25 /* AsteroidsUITests.swift in Sources */,
+				8325BD1A1EF8453700E8985D /* AsteroidsListDataServiceTests.swift in Sources */,
+				9A1917581EF7E584003B6F25 /* AsteroidModelsTests.swift in Sources */,
+				8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,11 +307,6 @@
 			isa = PBXTargetDependency;
 			target = 9A19173E1EF7E584003B6F25 /* Asteroids */;
 			targetProxy = 9A1917541EF7E584003B6F25 /* PBXContainerItemProxy */;
-		};
-		9A1917601EF7E584003B6F25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9A19173E1EF7E584003B6F25 /* Asteroids */;
-			targetProxy = 9A19175F1EF7E584003B6F25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -506,32 +477,6 @@
 			};
 			name = Release;
 		};
-		9A19176E1EF7E584003B6F25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = AsteroidsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oO.AsteroidsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Asteroids;
-			};
-			name = Debug;
-		};
-		9A19176F1EF7E584003B6F25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = AsteroidsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oO.AsteroidsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Asteroids;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,6 +496,7 @@
 				9A1917691EF7E584003B6F25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A19176A1EF7E584003B6F25 /* Build configuration list for PBXNativeTarget "AsteroidsTests" */ = {
 			isa = XCConfigurationList;
@@ -559,14 +505,7 @@
 				9A19176C1EF7E584003B6F25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		9A19176D1EF7E584003B6F25 /* Build configuration list for PBXNativeTarget "AsteroidsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9A19176E1EF7E584003B6F25 /* Debug */,
-				9A19176F1EF7E584003B6F25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
