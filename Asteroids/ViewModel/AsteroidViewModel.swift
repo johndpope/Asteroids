@@ -8,8 +8,12 @@
 
 import Foundation
 
-class AsteroidViewModel {
+class AsteroidViewModel: Equatable {
     private var asteroid: Asteroid
+    
+    var uid: String {
+        return asteroid.uid
+    }
     
     var nameText: String {
         return asteroid.name
@@ -65,8 +69,15 @@ class AsteroidViewModel {
     }
     
     func convertToStringFrom(minDiam: Double, andMaxDiam maxDiam: Double) -> String {
-        let diamMaxConverted = String(format: "%.2f", maxDiam)
-        let diamMinConverted = String(format: "%.2f", minDiam)
+        let diamMaxConverted = String(format: "%.0f", maxDiam)
+        let diamMinConverted = String(format: "%.0f", minDiam)
         return "\(diamMinConverted) - \(diamMaxConverted)"
+    }
+    
+    static func == (lhs: AsteroidViewModel, rhs: AsteroidViewModel) -> Bool {
+        if lhs.uid != rhs.uid {
+            return false
+        }
+        return true
     }
 }

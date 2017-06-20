@@ -9,13 +9,24 @@
 import UIKit
 
 class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDelegate {
+    
+    var asteroidManager: AsteroidManager?
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let asteroidManager = asteroidManager else {return 0}
+        return asteroidManager.asteroidsArrayCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "asteroidsList", for: indexPath) as! AsteroidTableViewCell
+        
+        guard let asteroidManager = asteroidManager else { fatalError() }
+
+        let currentAsteroid = asteroidManager.asteroidAtIndex(index: indexPath.row)
+        
+        cell.configureCellWith(asteroidViewModel: AsteroidViewModel(asteroid: currentAsteroid))
+        
+        return cell
     }
     
 }

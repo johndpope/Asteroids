@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Asteroid {
+class Asteroid: Equatable {
     
     let uid: String
     let name: String
@@ -46,5 +46,11 @@ class Asteroid {
         self.minDistanceKm = minDistanceKm
         self.minDistanceMiles = minDistanceMiles
     }
-
+    
+    static func == (lhs: Asteroid, rhs: Asteroid) -> Bool {
+        if lhs.uid != rhs.uid {
+            return false
+        }
+        return true 
+    }
 }
