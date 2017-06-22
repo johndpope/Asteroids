@@ -36,8 +36,17 @@ class AsteroidsListDataServiceTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSectionCount_ShouldEqualDatesCount() {
+        sut.asteroidManager?.addDay(day: "2017-06-22")
+        XCTAssertEqual(tableView.numberOfSections, 1)
+        
+        sut.asteroidManager?.addDay(day: "2017-06-23")
+        tableView.reloadData()
+        XCTAssertEqual(tableView.numberOfSections, 2)
+    }
+    
     func testRowCount_ShouldEqualAsteroidsCount() {
-        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "123", name: "name1", diamFeetMin: 10.5, diamFeetMax: 20, diamMetersMin: 10, diamMetersMax: 20, isDangerous: false, velocityKmH: 141.1, velocityMilesH: 100, minDistanceKm: 12345, minDistanceMiles: 1234))
+        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "123", name: "name1", diamFeetMin: 10.5, diamFeetMax: 20, diamMetersMin: 10, diamMetersMax: 20, isDangerous: false, velocityKmH: 141.1, velocityMilesH: 100, minDistanceKm: 12345, minDistanceMiles: 1234) forDate: "2017-06-22")
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         
         sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "456", name: "name2", diamFeetMin: 20, diamFeetMax: 30, diamMetersMin: 20, diamMetersMax: 40, isDangerous: true, velocityKmH: 145, velocityMilesH: 105, minDistanceKm: 100000, minDistanceMiles: 9999))
@@ -80,6 +89,16 @@ class AsteroidsListDataServiceTests: XCTestCase {
         
         XCTAssertEqual(cell.currentAsteroidViewModel, AsteroidViewModel(asteroid: asteroid))
         
+    }
+    
+    func testTableViewHeaderTitles_ShouldReturnCorrectValues() {
+        sut.asteroidManager?.addDay(day: "2017-06-22")
+        sut.asteroidManager?.addDay(day: "2017-06-23")
+        let section1Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 0)
+        let section2Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 1)
+        
+        XCTAssertEqual(section1Title, "22.06.17")
+        XCTAssertEqual(section2Title, "23.06.17")
     }
     
 }

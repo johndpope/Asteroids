@@ -50,6 +50,24 @@ class AsteroidManagerTests: XCTestCase {
         
         XCTAssertEqual(sut.asteroidsArrayCount, 1)
     }
+    
+    func testConvertDateFormat_ShouldEqualLocalDateFormat() {
+        var date = "2017-06-24"
+        var convertedDate = sut.convertDate(date: date)
+        XCTAssertEqual(convertedDate, "24.06.17")
+        
+        date = "hui"
+        convertedDate = sut.convertDate(date: date)
+        XCTAssertEqual(convertedDate, "")
+        
+        date = "2017-13-24"
+        convertedDate = sut.convertDate(date: date)
+        XCTAssertEqual(convertedDate, "")
+        
+        date = "2017-02-31"
+        convertedDate = sut.convertDate(date: date)
+        XCTAssertEqual(convertedDate, "")
+    }
 
     
 }

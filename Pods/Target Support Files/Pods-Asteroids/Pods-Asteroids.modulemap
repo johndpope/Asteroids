@@ -1,0 +1,6 @@
+framework module Pods_Asteroids {
+  umbrella header "Pods-Asteroids-umbrella.h"
+
+  export *
+  module * { export * }
+}
