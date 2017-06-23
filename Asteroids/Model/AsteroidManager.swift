@@ -10,11 +10,17 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+protocol AsteroidManagerDelegate: class {
+    func handleResult(asteroids: Dictionary<String, [Asteroid]>)
+    func handleErrorWithMessage(errorMessage: String)
+}
+
 class AsteroidManager {
     var dateArrayCount: Int { return dateArray.count }
     
     private var dateArray = [String]()
     private var asteroids = Dictionary<String, [Asteroid]>()
+    weak var delegate: AsteroidManagerDelegate?
     
     func addDate(date: String) {
         if !dateArray.contains(date) {
@@ -51,15 +57,84 @@ class AsteroidManager {
         return self.dateArray[index]
     }
     
+    //MARK: - Requests
+    
+    func getAsteroids(startDate: Date, endDate: Date) {
+        
+        //get array from dates range
+        let dates = generateDays(startDate, endDate: endDate)
+        
+        //set self.dateArrayString
+        for date in dates {
+            let dateString = convertDateToDateString(date: date)
+            addDate(date: dateString)
+        }
+        
+        //convert startDate and endDate to string
+        let startDateStr = convertDateToDateString(date: startDate)
+        let endDateStr = convertDateToDateString(date: endDate)
+        
+        Alamofire.request("\(Constants.apiGetAsteroidsList)?start_date=\(startDateStr)&end_date=\(endDateStr)&detailed=false&api_key=\(Constants.apiKey)").responseJSON { response in
+            print(response.result)   // result of response serialization
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let countOfElements = json[JsonKeys.element_count.rawValue].intValue
+                
+                if countOfElements > 0 {
+                    var asteroidsArray = [Asteroid]()
+                    
+                    //for all dates in array get current Asteroid and add to Array
+                    for i in 0 ..< self.dateArrayCount {
+                        let dateStr = self.dateArray[i]
+                        
+                        //asteroids for current day
+                        let asteroidsByDay = json[JsonKeys.near_earth_objects.rawValue][dateStr]
+                        
+                        if asteroidsByDay.count > 0 {
+                            
+                            for i in 0 ..< asteroidsByDay.count {
+                                
+                                let asteroid = Asteroid(uid: asteroidsByDay[i][JsonKeys.neo_reference_id.rawValue].stringValue,
+                                                        name: asteroidsByDay[i][JsonKeys.name.rawValue].stringValue,
+                                                        diamFeetMin: asteroidsByDay[i][JsonKeys.estimated_diameter.rawValue][JsonKeys.feet.rawValue][JsonKeys.estimated_diameter_min.rawValue].doubleValue,
+                                                        diamFeetMax: asteroidsByDay[i][JsonKeys.estimated_diameter.rawValue][JsonKeys.feet.rawValue][JsonKeys.estimated_diameter_max.rawValue].doubleValue,
+                                                        diamMetersMin: asteroidsByDay[i][JsonKeys.estimated_diameter.rawValue][JsonKeys.meters.rawValue][JsonKeys.estimated_diameter_min.rawValue].doubleValue,
+                                                        diamMetersMax: asteroidsByDay[i][JsonKeys.estimated_diameter.rawValue][JsonKeys.meters.rawValue][JsonKeys.estimated_diameter_max.rawValue].doubleValue,
+                                                        isDangerous: asteroidsByDay[i][JsonKeys.is_potentially_hazardous_asteroid.rawValue].boolValue,
+                                                        velocityKmH: asteroidsByDay[i][JsonKeys.close_approach_data.rawValue][0][JsonKeys.relative_velocity.rawValue][JsonKeys.kilometers_per_hour.rawValue].doubleValue,
+                                                        velocityMilesH: asteroidsByDay[i][JsonKeys.close_approach_data.rawValue][0][JsonKeys.relative_velocity.rawValue][JsonKeys.miles_per_hour.rawValue].doubleValue,
+                                                        minDistanceKm: asteroidsByDay[i][JsonKeys.close_approach_data.rawValue][0][JsonKeys.miss_distance.rawValue][JsonKeys.kilometers.rawValue].doubleValue,
+                                                        minDistanceMiles: asteroidsByDay[i][JsonKeys.close_approach_data.rawValue][0][JsonKeys.miss_distance.rawValue][JsonKeys.miles.rawValue].doubleValue)
+                                asteroidsArray.append(asteroid)
+                            }
+                            self.asteroids[dateStr] = asteroidsArray
+                            asteroidsArray.removeAll()
+                        }
+                    }
+                    self.delegate?.handleResult(asteroids: self.asteroids)
+                } else {
+                    //get error
+                    self.delegate?.handleErrorWithMessage(errorMessage: json["error_message"].stringValue)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
+    //MARK: - Helpers for Date
     func dateForSection(index: Int) -> String {
         if dateArrayCount <= index {
             return ""
         }
-        let dateString = convertDate(date: dateArray[index])
+        let dateString = convertDateFormat(date: dateArray[index])
         return dateString
     }
     
-    func convertDate(date: String) -> String {
+    private func convertDateFormat(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let date = dateFormatter.date(from: date) {
@@ -67,5 +142,31 @@ class AsteroidManager {
             return result
         }
         return ""
+    }
+    
+    private func convertDateStringToDate(string: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: string) {
+            return date
+        }
+        return nil
+    }
+    
+    private func convertDateToDateString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date)
+    }
+    
+    private func generateDays(_ beginDate: Date, endDate: Date) -> [Date] {
+        var dates: [Date] = []
+        var date = beginDate
+        
+        while date.compare(endDate) != .orderedDescending {
+            dates.append(date)
+            date = date.dateFromDays(1)
+        }
+        return dates
     }
 }

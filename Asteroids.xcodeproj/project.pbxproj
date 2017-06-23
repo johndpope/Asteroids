@@ -17,6 +17,7 @@
 		8325BD211EF995D700E8985D /* MockExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD201EF995D700E8985D /* MockExtensions.swift */; };
 		8325BD231EF99A6700E8985D /* AsteroidManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD221EF99A6700E8985D /* AsteroidManagerTests.swift */; };
 		8325BD261EF99CC400E8985D /* AsteroidCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD251EF99CC400E8985D /* AsteroidCellTests.swift */; };
+		83C9FBBF1EFD845F00E4F94C /* Date+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */; };
 		9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917421EF7E584003B6F25 /* AppDelegate.swift */; };
 		9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917461EF7E584003B6F25 /* Main.storyboard */; };
 		9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917491EF7E584003B6F25 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		8325BD201EF995D700E8985D /* MockExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockExtensions.swift; sourceTree = "<group>"; };
 		8325BD221EF99A6700E8985D /* AsteroidManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidManagerTests.swift; sourceTree = "<group>"; };
 		8325BD251EF99CC400E8985D /* AsteroidCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidCellTests.swift; sourceTree = "<group>"; };
+		83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Calendar.swift"; path = "Extension/Date+Calendar.swift"; sourceTree = "<group>"; };
 		9A19173F1EF7E584003B6F25 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1917421EF7E584003B6F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1917471EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			name = TestViews;
 			sourceTree = "<group>";
 		};
+		83C9FBBD1EFD80DC00E4F94C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		9A1917361EF7E584003B6F25 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 		9A1917411EF7E584003B6F25 /* Asteroids */ = {
 			isa = PBXGroup;
 			children = (
+				83C9FBBD1EFD80DC00E4F94C /* Extension */,
 				8325BD101EF8360D00E8985D /* View */,
 				9A1917791EF7FCFB003B6F25 /* Controller */,
 				9A1917761EF7E5DB003B6F25 /* Resources */,
@@ -389,6 +400,7 @@
 				9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */,
 				8325BD1C1EF9889F00E8985D /* AsteroidManager.swift in Sources */,
 				9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */,
+				83C9FBBF1EFD845F00E4F94C /* Date+Calendar.swift in Sources */,
 				8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */,
 				8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */,
 			);
