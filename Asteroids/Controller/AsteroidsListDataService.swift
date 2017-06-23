@@ -14,12 +14,15 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
 
     func numberOfSections(in tableView: UITableView) -> Int {
         guard let asteroidManager = asteroidManager else {return 1}
-        return asteroidManager.daysArrayCount
+        return asteroidManager.dateArrayCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let asteroidManager = asteroidManager else {return 0}
-        return asteroidManager.asteroidsArrayCount
+        
+        let date = asteroidManager.getDateAtIndex(index: section)
+        
+        return asteroidManager.getAsteroidsArrayCountForCurrentDate(date: date)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -27,7 +30,8 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
         
         guard let asteroidManager = asteroidManager else { fatalError() }
 
-        let currentAsteroid = asteroidManager.asteroidAtIndex(index: indexPath.row)
+        let date = asteroidManager.getDateAtIndex(index: indexPath.section)
+        guard let currentAsteroid = asteroidManager.getAsteroidAtIndexForDate(index: indexPath.row, date: date) else {return cell}
         
         cell.configureCellWith(asteroidViewModel: AsteroidViewModel(asteroid: currentAsteroid))
         
@@ -36,7 +40,7 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let asteroidManager = asteroidManager else { return "" }
-        return asteroidManager.dayForSection(index: section)
+        return asteroidManager.dateForSection(index: section)
     }
     
 }

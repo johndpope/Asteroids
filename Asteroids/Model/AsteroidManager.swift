@@ -11,31 +11,52 @@ import Alamofire
 import SwiftyJSON
 
 class AsteroidManager {
-    var asteroidsArrayCount: Int { return asteroidsArray.count }
-    var daysArrayCount: Int { return daysArray.count }
+    var dateArrayCount: Int { return dateArray.count }
     
-    private var asteroidsArray = [Asteroid]()
-    private var daysArray = [String]()
+    private var dateArray = [String]()
+    private var asteroids = Dictionary<String, [Asteroid]>()
     
-    func addDay(day: String) {
-        if !daysArray.contains(day) {
-            daysArray.append(day)
+    func addDate(date: String) {
+        if !dateArray.contains(date) {
+            dateArray.append(date)
         }
     }
     
-    func addAsteroid(asteroid: Asteroid) {
-        if !asteroidsArray.contains(asteroid) {
-            asteroidsArray.append(asteroid)
+    func addAsteroidsForDate(asteroids: [Asteroid], date: String) {
+        self.asteroids[date] = asteroids
+    }
+    
+    func getAsteroidsArrayForDate(date: String) -> [Asteroid] {
+        guard let asteroidsArrayForDate = self.asteroids[date] else {return [Asteroid]()}
+        return asteroidsArrayForDate
+    }
+    
+    func getAsteroidsArrayCountForCurrentDate(date: String) -> Int {
+        guard let asteroidsArrayForDate = self.asteroids[date] else {return 0}
+        return asteroidsArrayForDate.count
+    }
+    
+    func getAsteroidAtIndexForDate(index: Int, date: String) -> Asteroid? {
+        guard let asteroidsArrayForDate = self.asteroids[date] else {return nil}
+        if asteroidsArrayForDate.count <= index {
+            return nil
         }
+        return asteroidsArrayForDate[index]
     }
     
-    func asteroidAtIndex(index: Int) -> Asteroid {
-        return asteroidsArray[index]
+    func getDateAtIndex(index: Int) -> String {
+        if dateArrayCount <= index {
+            return ""
+        }
+        return self.dateArray[index]
     }
     
-    func dayForSection(index: Int) -> String {
-        let dayString = convertDate(date: daysArray[index])
-        return dayString
+    func dateForSection(index: Int) -> String {
+        if dateArrayCount <= index {
+            return ""
+        }
+        let dateString = convertDate(date: dateArray[index])
+        return dateString
     }
     
     func convertDate(date: String) -> String {

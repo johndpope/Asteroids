@@ -15,6 +15,9 @@ class AsteroidsListDataServiceTests: XCTestCase {
     var tableView: UITableView!
     var asteroidsVC: AsteroidsViewController!
     
+    var asteroidsArray1 = [Asteroid]()
+    var asteroidsArray2 = [Asteroid]()
+    
     override func setUp() {
         super.setUp()
         
@@ -29,6 +32,15 @@ class AsteroidsListDataServiceTests: XCTestCase {
         
         tableView.dataSource = sut
         tableView.delegate = sut
+        
+        //generate tests data
+        let asteroid1 = Asteroid(uid: "001", name: "name1", diamFeetMin: 10, diamFeetMax: 20, diamMetersMin: 15, diamMetersMax: 25, isDangerous: true, velocityKmH: 100, velocityMilesH: 60, minDistanceKm: 100000, minDistanceMiles: 9999)
+        let asteroid2 = Asteroid(uid: "002", name: "name2", diamFeetMin: 10, diamFeetMax: 20, diamMetersMin: 15, diamMetersMax: 25, isDangerous: true, velocityKmH: 100, velocityMilesH: 60, minDistanceKm: 100000, minDistanceMiles: 9999)
+        let asteroid3 = Asteroid(uid: "003", name: "name3", diamFeetMin: 10, diamFeetMax: 20, diamMetersMin: 15, diamMetersMax: 25, isDangerous: true, velocityKmH: 100, velocityMilesH: 60, minDistanceKm: 100000, minDistanceMiles: 9999)
+        let asteroid4 = Asteroid(uid: "004", name: "name4", diamFeetMin: 10, diamFeetMax: 20, diamMetersMin: 15, diamMetersMax: 25, isDangerous: true, velocityKmH: 100, velocityMilesH: 60, minDistanceKm: 100000, minDistanceMiles: 9999)
+        
+        asteroidsArray1 = [asteroid1, asteroid2, asteroid3]
+        asteroidsArray2 = [asteroid4]
     }
     
     override func tearDown() {
@@ -36,27 +48,32 @@ class AsteroidsListDataServiceTests: XCTestCase {
         super.tearDown()
     }
     
+    
+    
     func testSectionCount_ShouldEqualDatesCount() {
-        sut.asteroidManager?.addDay(day: "2017-06-22")
+        sut.asteroidManager?.addDate(date: "2017-06-22")
         XCTAssertEqual(tableView.numberOfSections, 1)
         
-        sut.asteroidManager?.addDay(day: "2017-06-23")
+        sut.asteroidManager?.addDate(date: "2017-06-23")
         tableView.reloadData()
         XCTAssertEqual(tableView.numberOfSections, 2)
     }
-    
-    func testRowCount_ShouldEqualAsteroidsCount() {
-        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "123", name: "name1", diamFeetMin: 10.5, diamFeetMax: 20, diamMetersMin: 10, diamMetersMax: 20, isDangerous: false, velocityKmH: 141.1, velocityMilesH: 100, minDistanceKm: 12345, minDistanceMiles: 1234) forDate: "2017-06-22")
-        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
+
+    func testRowCount_ShouldEqualAsteroidsForCurrentDateCount() {
+        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.addDate(date: "2017-06-23")
+        sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 3)
         
-        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "456", name: "name2", diamFeetMin: 20, diamFeetMax: 30, diamMetersMin: 20, diamMetersMax: 40, isDangerous: true, velocityKmH: 145, velocityMilesH: 105, minDistanceKm: 100000, minDistanceMiles: 9999))
-        
+        sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray2, date: "2017-06-23")
         tableView.reloadData()
-        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 1), 1)
     }
     
     func testCellForRowAtIndexPath_ShouldReturnAsteroidCell() {
-        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "456", name: "name2", diamFeetMin: 20, diamFeetMax: 30, diamMetersMin: 20, diamMetersMax: 40, isDangerous: true, velocityKmH: 145, velocityMilesH: 105, minDistanceKm: 100000, minDistanceMiles: 9999))
+        
+        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableView.reloadData()
         
         let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
@@ -68,7 +85,8 @@ class AsteroidsListDataServiceTests: XCTestCase {
         let tableViewMock = TableViewMock.initializeTableViewMock()
         tableViewMock.dataSource = sut
         
-        sut.asteroidManager?.addAsteroid(asteroid: Asteroid(uid: "456", name: "name2", diamFeetMin: 20, diamFeetMax: 30, diamMetersMin: 20, diamMetersMax: 40, isDangerous: true, velocityKmH: 145, velocityMilesH: 105, minDistanceKm: 100000, minDistanceMiles: 9999))
+        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableViewMock.reloadData()
         
         _ = tableViewMock.cellForRow(at: IndexPath(row: 0, section: 0))
@@ -80,20 +98,19 @@ class AsteroidsListDataServiceTests: XCTestCase {
         let tableViewMock = TableViewMock.initializeTableViewMock()
         tableViewMock.dataSource = sut
         
-        let asteroid = Asteroid(uid: "456", name: "name2", diamFeetMin: 20, diamFeetMax: 30, diamMetersMin: 20, diamMetersMax: 40, isDangerous: true, velocityKmH: 145, velocityMilesH: 105, minDistanceKm: 100000, minDistanceMiles: 9999)
-
-        sut.asteroidManager?.addAsteroid(asteroid: asteroid)
+        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableViewMock.reloadData()
         
         let cell = tableViewMock.cellForRow(at: IndexPath(row: 0, section: 0)) as! AsteroidCellMock
         
-        XCTAssertEqual(cell.currentAsteroidViewModel, AsteroidViewModel(asteroid: asteroid))
+        XCTAssertEqual(cell.currentAsteroidViewModel, AsteroidViewModel(asteroid: asteroidsArray1[0]))
         
     }
     
     func testTableViewHeaderTitles_ShouldReturnCorrectValues() {
-        sut.asteroidManager?.addDay(day: "2017-06-22")
-        sut.asteroidManager?.addDay(day: "2017-06-23")
+        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.addDate(date: "2017-06-23")
         let section1Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 0)
         let section2Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 1)
         
