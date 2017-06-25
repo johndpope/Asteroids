@@ -17,15 +17,29 @@ protocol AsteroidManagerDelegate: class {
 
 class AsteroidManager {
     var dateArrayCount: Int { return dateArray.count }
+    var lastDateInArray: String { return self.dateArray.last ?? "" }
+    var firstDateInArray: String { return self.dateArray.first ?? "" }
     
     private var dateArray = [String]()
     private var asteroids = Dictionary<String, [Asteroid]>()
     weak var delegate: AsteroidManagerDelegate?
     
-    func addDate(date: String) {
-        if !dateArray.contains(date) {
-            dateArray.append(date)
+    func appendDates(dates: [Date]) {
+        var datesStrArray = [String]()
+        for date in dates {
+            let dateStr = convertDateToDateString(date: date)
+            datesStrArray.append(dateStr)
         }
+        dateArray.append(contentsOf: datesStrArray)
+    }
+    
+    func insertDates(dates: [Date]) {
+        var datesStrArray = [String]()
+        for date in dates {
+            let dateStr = convertDateToDateString(date: date)
+            datesStrArray.append(dateStr)
+        }
+        dateArray.insert(contentsOf: datesStrArray, at: 0)
     }
     
     func addAsteroidsForDate(asteroids: [Asteroid], date: String) {
@@ -64,10 +78,22 @@ class AsteroidManager {
         //get array from dates range
         let dates = generateDays(startDate, endDate: endDate)
         
+        if let firstDateInArray = convertDateStringToDate(string: self.firstDateInArray) {
+            if endDate < firstDateInArray {
+                insertDates(dates: dates)
+            } else {
+                appendDates(dates: dates)
+            }
+        } else {
+            appendDates(dates: dates)
+        }
+        
+        var datesStrArray = [String]()
+        
         //set self.dateArrayString
         for date in dates {
             let dateString = convertDateToDateString(date: date)
-            addDate(date: dateString)
+            datesStrArray.append(dateString)
         }
         
         //convert startDate and endDate to string
@@ -86,8 +112,8 @@ class AsteroidManager {
                     var asteroidsArray = [Asteroid]()
                     
                     //for all dates in array get current Asteroid and add to Array
-                    for i in 0 ..< self.dateArrayCount {
-                        let dateStr = self.dateArray[i]
+                    for i in 0 ..< datesStrArray.count {
+                        let dateStr = datesStrArray[i]
                         
                         //asteroids for current day
                         let asteroidsByDay = json[JsonKeys.near_earth_objects.rawValue][dateStr]
@@ -124,7 +150,6 @@ class AsteroidManager {
         }
     }
     
-    
     //MARK: - Helpers for Date
     func dateForSection(index: Int) -> String {
         if dateArrayCount <= index {
@@ -144,7 +169,7 @@ class AsteroidManager {
         return ""
     }
     
-    private func convertDateStringToDate(string: String) -> Date? {
+    func convertDateStringToDate(string: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let date = dateFormatter.date(from: string) {
@@ -159,7 +184,7 @@ class AsteroidManager {
         return dateFormatter.string(from: date)
     }
     
-    private func generateDays(_ beginDate: Date, endDate: Date) -> [Date] {
+    func generateDays(_ beginDate: Date, endDate: Date) -> [Date] {
         var dates: [Date] = []
         var date = beginDate
         

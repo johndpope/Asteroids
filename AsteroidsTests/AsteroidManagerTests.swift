@@ -41,9 +41,12 @@ class AsteroidManagerTests: XCTestCase {
     }
     
     func testAddDate_CountShouldChangeAfterDateAdded() {
-        sut.addDate(date: "2017-05-22")
+        let today = Date()
+        let tomorrow = today.dateFromDays(1)
+//        sut.addDate(date: "2017-05-22")
+        sut.appendDates(dates: [today])
         XCTAssertEqual(sut.dateArrayCount, 1)
-        sut.addDate(date: "2017-05-23")
+        sut.appendDates(dates: [tomorrow])
         XCTAssertEqual(sut.dateArrayCount, 2)
     }
     
@@ -89,32 +92,58 @@ class AsteroidManagerTests: XCTestCase {
     }
     
     func testGetDateAtIndex_ShouldReturnDateString() {
-        sut.addDate(date: "2017-05-22")
-        sut.addDate(date: "2017-05-23")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
+
+        sut.appendDates(dates: [date1!,date2!])
+        
+//        sut.addDate(date: "2017-05-22")
+//        sut.addDate(date: "2017-05-23")
         var date = sut.getDateAtIndex(index: 0)
-        XCTAssertEqual(date, "2017-05-22")
+        XCTAssertEqual(date, "2017-06-22")
         date = sut.getDateAtIndex(index: 1)
-        XCTAssertEqual(date, "2017-05-23")
+        XCTAssertEqual(date, "2017-06-23")
         
         date = sut.getDateAtIndex(index: 5)
         XCTAssertEqual(date, "")
     }
     
     func testDateForSection_ShouldReturnConvertedDate() {
-        sut.addDate(date: "2017-05-22")
-        sut.addDate(date: "2017-05-23")
-        sut.addDate(date: "2017-05-33")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
+        
+        sut.appendDates(dates: [date1!,date2!])
+        
+//        sut.addDate(date: "2017-05-22")
+//        sut.addDate(date: "2017-05-23")
+//        sut.addDate(date: "2017-05-33")
         var dateForSection = sut.dateForSection(index: 0)
-        XCTAssertEqual(dateForSection, "22.05.17")
+        XCTAssertEqual(dateForSection, "22.06.17")
         
         dateForSection = sut.dateForSection(index: 1)
-        XCTAssertEqual(dateForSection, "23.05.17")
+        XCTAssertEqual(dateForSection, "23.06.17")
         
         dateForSection = sut.dateForSection(index: 2)
         XCTAssertEqual(dateForSection, "")
         
         dateForSection = sut.dateForSection(index: 5)
         XCTAssertEqual(dateForSection, "")
+    }
+    
+    func testGetLastDate_ShouldReturnLastDateStringFromArray() {
+//        sut.addDate(date: "2017-06.22")
+//        sut.addDate(date: "2017-06-23")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
+        
+        sut.appendDates(dates: [date1!,date2!])
+        XCTAssertEqual(sut.lastDateInArray, "2017-06-23")
     }
     
 }

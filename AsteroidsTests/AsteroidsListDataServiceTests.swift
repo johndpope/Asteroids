@@ -51,17 +51,32 @@ class AsteroidsListDataServiceTests: XCTestCase {
     
     
     func testSectionCount_ShouldEqualDatesCount() {
-        sut.asteroidManager?.addDate(date: "2017-06-22")
-        XCTAssertEqual(tableView.numberOfSections, 1)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
         
-        sut.asteroidManager?.addDate(date: "2017-06-23")
+        sut.asteroidManager?.appendDates(dates: [date1!])
+        
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
+        XCTAssertEqual(tableView.numberOfSections, 1)
+
+        sut.asteroidManager?.appendDates(dates: [date2!])
+//        sut.asteroidManager?.addDate(date: "2017-06-23")
         tableView.reloadData()
         XCTAssertEqual(tableView.numberOfSections, 2)
     }
 
     func testRowCount_ShouldEqualAsteroidsForCurrentDateCount() {
-        sut.asteroidManager?.addDate(date: "2017-06-22")
-        sut.asteroidManager?.addDate(date: "2017-06-23")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
+        
+        sut.asteroidManager?.appendDates(dates: [date1!,date2!])
+        
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
+//        sut.asteroidManager?.addDate(date: "2017-06-23")
         sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 3)
         
@@ -71,8 +86,13 @@ class AsteroidsListDataServiceTests: XCTestCase {
     }
     
     func testCellForRowAtIndexPath_ShouldReturnAsteroidCell() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
         
-        sut.asteroidManager?.addDate(date: "2017-06-22")
+        sut.asteroidManager?.appendDates(dates: [date1!])
+        
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
         sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableView.reloadData()
         
@@ -85,7 +105,12 @@ class AsteroidsListDataServiceTests: XCTestCase {
         let tableViewMock = TableViewMock.initializeTableViewMock()
         tableViewMock.dataSource = sut
         
-        sut.asteroidManager?.addDate(date: "2017-06-22")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        sut.asteroidManager?.appendDates(dates: [date1!])
+        
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
         sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableViewMock.reloadData()
         
@@ -97,8 +122,13 @@ class AsteroidsListDataServiceTests: XCTestCase {
     func testCellConfig_ShouldSetCellData() {
         let tableViewMock = TableViewMock.initializeTableViewMock()
         tableViewMock.dataSource = sut
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        sut.asteroidManager?.appendDates(dates: [date1!])
         
-        sut.asteroidManager?.addDate(date: "2017-06-22")
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
         sut.asteroidManager?.addAsteroidsForDate(asteroids: asteroidsArray1, date: "2017-06-22")
         tableViewMock.reloadData()
         
@@ -109,8 +139,15 @@ class AsteroidsListDataServiceTests: XCTestCase {
     }
     
     func testTableViewHeaderTitles_ShouldReturnCorrectValues() {
-        sut.asteroidManager?.addDate(date: "2017-06-22")
-        sut.asteroidManager?.addDate(date: "2017-06-23")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date1 = dateFormatter.date(from: "2017-06-22")
+        let date2 = dateFormatter.date(from: "2017-06-23")
+        sut.asteroidManager?.appendDates(dates: [date1!,date2!])
+        
+//        sut.asteroidManager?.addDate(date: "2017-06-22")
+//        sut.asteroidManager?.addDate(date: "2017-06-23")
         let section1Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 0)
         let section2Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 1)
         

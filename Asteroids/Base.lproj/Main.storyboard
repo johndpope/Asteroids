@@ -99,7 +99,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="vrs-Ga-xdn" userLabel="AsteroidsListDataService" customClass="AsteroidsListDataService" customModule="Asteroids" customModuleProvider="target"/>
+                <customObject id="vrs-Ga-xdn" userLabel="AsteroidsListDataService" customClass="AsteroidsListDataService" customModule="Asteroids" customModuleProvider="target">
+                    <connections>
+                        <outlet property="asteroidsTableView" destination="vcV-BE-PcK" id="jOs-FV-8ZA"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1988" y="451.12443778110946"/>
         </scene>
