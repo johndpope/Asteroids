@@ -33,15 +33,6 @@ class AsteroidManager {
         dateArray.append(contentsOf: datesStrArray)
     }
     
-    func insertDates(dates: [Date]) {
-        var datesStrArray = [String]()
-        for date in dates {
-            let dateStr = convertDateToDateString(date: date)
-            datesStrArray.append(dateStr)
-        }
-        dateArray.insert(contentsOf: datesStrArray, at: 0)
-    }
-    
     func addAsteroidsForDate(asteroids: [Asteroid], date: String) {
         self.asteroids[date] = asteroids
     }
@@ -77,17 +68,9 @@ class AsteroidManager {
         
         //get array from dates range
         let dates = generateDays(startDate, endDate: endDate)
-        
-        if let firstDateInArray = convertDateStringToDate(string: self.firstDateInArray) {
-            if endDate < firstDateInArray {
-                insertDates(dates: dates)
-            } else {
-                appendDates(dates: dates)
-            }
-        } else {
-            appendDates(dates: dates)
-        }
-        
+    
+        appendDates(dates: dates)
+
         var datesStrArray = [String]()
         
         //set self.dateArrayString
@@ -145,7 +128,7 @@ class AsteroidManager {
                     self.delegate?.handleErrorWithMessage(errorMessage: json["error_message"].stringValue)
                 }
             case .failure(let error):
-                print(error)
+                self.delegate?.handleErrorWithMessage(errorMessage: error.localizedDescription)
             }
         }
     }

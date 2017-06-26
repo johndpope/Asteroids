@@ -12,6 +12,7 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
 
     @IBOutlet weak var asteroidsListTableView: UITableView!
     @IBOutlet var dataService: AsteroidsListDataService!
+    @IBOutlet weak var tableFooterView: UIView!
     
     var asteroidManager: AsteroidManager = AsteroidManager()
     
@@ -27,6 +28,8 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
         asteroidsListTableView.estimatedRowHeight = 44.0
         asteroidsListTableView.rowHeight = UITableViewAutomaticDimension
         
+        tableFooterView.isHidden = true
+        
         //first update asteroids
         let today = Date()
         let todayPlus7 = today.dateFromDays(7)
@@ -35,6 +38,7 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
     
     //MARK: - Handle request results
     func handleResult(asteroids: Dictionary<String, [Asteroid]>) {
+        tableFooterView.isHidden = true
         asteroidsListTableView.reloadData()
     }
     
