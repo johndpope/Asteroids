@@ -14,13 +14,16 @@ class AsteroidTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var diameterLabel: UILabel!
     @IBOutlet weak var velocityLabel: UILabel!
-    var isDangerous: Bool?
+    @IBOutlet weak var asteroidView: AsteroidView!
     
     func configureCellWith(asteroidViewModel: AsteroidViewModel) {
         nameLabel.text = asteroidViewModel.nameText
         distanceLabel.text = asteroidViewModel.distance
         diameterLabel.text = asteroidViewModel.diameter
         velocityLabel.text = asteroidViewModel.velocity
-        isDangerous = asteroidViewModel.isDangerous
+        
+        if asteroidViewModel.isDangerous {
+            asteroidView.shadowColor = UIColor(red: 225.0/255.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        }
     }
 }

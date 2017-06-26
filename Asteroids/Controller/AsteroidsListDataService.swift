@@ -44,6 +44,10 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
         return asteroidManager.dateForSection(index: section)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView is UITableView {
             let bottom: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height

@@ -26,13 +26,13 @@ class AsteroidModelsTests: XCTestCase {
         let someAsteroidViewModel = AsteroidViewModel(asteroid: someAsteroid)
         
         if (Constants.system == System.metric.rawValue) {
-            XCTAssertEqual(someAsteroidViewModel.diameter, "5 - 10 м")
-            XCTAssertEqual(someAsteroidViewModel.velocity, "100 км/ч")
-            XCTAssertEqual(someAsteroidViewModel.distance, "101 км")
+            XCTAssertEqual(someAsteroidViewModel.diameter, "Диаметр: 5 - 10 м")
+            XCTAssertEqual(someAsteroidViewModel.velocity, "Скорость: 100 км/ч")
+            XCTAssertEqual(someAsteroidViewModel.distance, "Дистанция: 101 км")
         } else {
-            XCTAssertEqual(someAsteroidViewModel.diameter, "10 - 20 ф")
-            XCTAssertEqual(someAsteroidViewModel.velocity, "60 миль/ч")
-            XCTAssertEqual(someAsteroidViewModel.distance, "50 миль")
+            XCTAssertEqual(someAsteroidViewModel.diameter, "Диаметр: 10 - 20 ф")
+            XCTAssertEqual(someAsteroidViewModel.velocity, "Скорость: 60 миль/ч")
+            XCTAssertEqual(someAsteroidViewModel.distance, "Дистанция: 50 миль")
         }
         
         XCTAssertEqual(someAsteroidViewModel.nameText, "asteroid")

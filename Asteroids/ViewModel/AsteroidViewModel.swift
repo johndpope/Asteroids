@@ -37,10 +37,10 @@ class AsteroidViewModel: Equatable {
             formatter.maximumFractionDigits = 0
             if Constants.system == System.metric.rawValue {
                 let velocityKmH = formatter.string(from: NSNumber(value: asteroid.velocityKmH))
-                return "\(velocityKmH ?? ("--")) км/ч"
+                return "Скорость: \(velocityKmH ?? ("--")) км/ч"
             } else {
                 let velocityMilesH = formatter.string(from: NSNumber(value: asteroid.velocityMilesH))
-                return "\(velocityMilesH ?? ("--")) миль/ч"
+                return "Скорость: \(velocityMilesH ?? ("--")) миль/ч"
             }
         }
     }
@@ -53,10 +53,10 @@ class AsteroidViewModel: Equatable {
             formatter.maximumFractionDigits = 0
             if Constants.system == System.metric.rawValue {
                 let minDistanceKm = formatter.string(from: NSNumber(value: asteroid.minDistanceKm))
-                return "\(minDistanceKm ?? ("--")) км"
+                return "Дистанция: \(minDistanceKm ?? ("--")) км"
             } else {
                 let minDistanceMiles = formatter.string(from: NSNumber(value: asteroid.minDistanceMiles))
-                return "\(minDistanceMiles ?? ("--")) ми"
+                return "Дистанция: \(minDistanceMiles ?? ("--")) ми"
             }
         }
     }
@@ -71,7 +71,7 @@ class AsteroidViewModel: Equatable {
     func convertToStringFrom(minDiam: Double, andMaxDiam maxDiam: Double) -> String {
         let diamMaxConverted = String(format: "%.0f", maxDiam)
         let diamMinConverted = String(format: "%.0f", minDiam)
-        return "\(diamMinConverted) - \(diamMaxConverted)"
+        return "Диаметр: \(diamMinConverted) - \(diamMaxConverted)"
     }
     
     static func == (lhs: AsteroidViewModel, rhs: AsteroidViewModel) -> Bool {

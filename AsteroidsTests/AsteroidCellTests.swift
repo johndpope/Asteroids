@@ -38,16 +38,15 @@ class AsteroidCellTests: XCTestCase {
         cell.configureCellWith(asteroidViewModel: AsteroidViewModel(asteroid: currentAsteroid))
         
         if (Constants.system == System.metric.rawValue) {
-            XCTAssertEqual(cell.diameterLabel.text, "10 - 20 м")
-            XCTAssertEqual(cell.velocityLabel.text, "141 км/ч")
-            XCTAssertEqual(cell.distanceLabel.text, "12 345 км")
+            XCTAssertEqual(cell.diameterLabel.text, "Диаметр: 10 - 20 м")
+            XCTAssertEqual(cell.velocityLabel.text, "Скорость: 141 км/ч")
+            XCTAssertEqual(cell.distanceLabel.text, "Дистанция: 12 345 км")
         } else {
-            XCTAssertEqual(cell.diameterLabel.text, "10.5 - 20 ф")
-            XCTAssertEqual(cell.velocityLabel.text, "100 миль/ч")
-            XCTAssertEqual(cell.distanceLabel.text, "1 234 миль")
+            XCTAssertEqual(cell.diameterLabel.text, "Диаметр: 10.5 - 20 ф")
+            XCTAssertEqual(cell.velocityLabel.text, "Скорость: 100 миль/ч")
+            XCTAssertEqual(cell.distanceLabel.text, "Дистанция: 1 234 миль")
         }
         XCTAssertEqual(cell.nameLabel.text, "name1")
-        XCTAssertEqual(cell.isDangerous, false)
     }
     
 }
