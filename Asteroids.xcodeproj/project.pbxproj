@@ -28,6 +28,10 @@
 		9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917741EF7E5D7003B6F25 /* AsteroidViewModel.swift */; };
 		9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917771EF7E5FF003B6F25 /* Constants.swift */; };
 		9A19177B1EF7FD31003B6F25 /* AsteroidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19177A1EF7FD31003B6F25 /* AsteroidsViewController.swift */; };
+		9AB90ED91F028771005308F3 /* OrbitalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB90ED81F028771005308F3 /* OrbitalDetailViewController.swift */; };
+		9AB90EDB1F029D2A005308F3 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB90EDA1F029D2A005308F3 /* Protocols.swift */; };
+		9AB90EDD1F02A0BD005308F3 /* OrbitalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB90EDC1F02A0BD005308F3 /* OrbitalManager.swift */; };
+		9AB90EDF1F02A2DF005308F3 /* OrbitalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB90EDE1F02A2DF005308F3 /* OrbitalDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,10 @@
 		9A1917741EF7E5D7003B6F25 /* AsteroidViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidViewModel.swift; path = ViewModel/AsteroidViewModel.swift; sourceTree = "<group>"; };
 		9A1917771EF7E5FF003B6F25 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Resources/Constants.swift; sourceTree = "<group>"; };
 		9A19177A1EF7FD31003B6F25 /* AsteroidsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidsViewController.swift; path = Controller/AsteroidsViewController.swift; sourceTree = "<group>"; };
+		9AB90ED81F028771005308F3 /* OrbitalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrbitalDetailViewController.swift; path = Controller/OrbitalDetailViewController.swift; sourceTree = "<group>"; };
+		9AB90EDA1F029D2A005308F3 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Extension/Protocols.swift; sourceTree = "<group>"; };
+		9AB90EDC1F02A0BD005308F3 /* OrbitalManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrbitalManager.swift; path = Model/OrbitalManager.swift; sourceTree = "<group>"; };
+		9AB90EDE1F02A2DF005308F3 /* OrbitalDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrbitalDataService.swift; path = Controller/OrbitalDataService.swift; sourceTree = "<group>"; };
 		F1C9492F4B7A95C19001F8A4 /* Pods_Asteroids.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Asteroids.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */,
+				9AB90EDA1F029D2A005308F3 /* Protocols.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			children = (
 				9A1917721EF7E5B6003B6F25 /* Asteroid.swift */,
 				8325BD1B1EF9889F00E8985D /* AsteroidManager.swift */,
+				9AB90EDC1F02A0BD005308F3 /* OrbitalManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -221,6 +231,8 @@
 				9A19177A1EF7FD31003B6F25 /* AsteroidsViewController.swift */,
 				8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */,
 				8325BD0E1EF835A800E8985D /* SettingsViewController.swift */,
+				9AB90ED81F028771005308F3 /* OrbitalDetailViewController.swift */,
+				9AB90EDE1F02A2DF005308F3 /* OrbitalDataService.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -402,10 +414,14 @@
 				9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */,
 				9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */,
 				8325BD1C1EF9889F00E8985D /* AsteroidManager.swift in Sources */,
+				9AB90ED91F028771005308F3 /* OrbitalDetailViewController.swift in Sources */,
 				83C9FBC11F016DE000E4F94C /* AsteroidView.swift in Sources */,
 				9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */,
+				9AB90EDD1F02A0BD005308F3 /* OrbitalManager.swift in Sources */,
+				9AB90EDB1F029D2A005308F3 /* Protocols.swift in Sources */,
 				83C9FBBF1EFD845F00E4F94C /* Date+Calendar.swift in Sources */,
 				8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */,
+				9AB90EDF1F02A2DF005308F3 /* OrbitalDataService.swift in Sources */,
 				8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

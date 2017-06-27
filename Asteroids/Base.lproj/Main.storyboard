@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="piw-1x-gMe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="piw-1x-gMe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Asteroids View Controller-->
+        <!--Астероиды-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="AsteroidsListVC" id="BYZ-38-t0r" customClass="AsteroidsViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,7 +43,6 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="E7K-cX-nl2" firstAttribute="centerX" secondItem="U1A-Mu-G6B" secondAttribute="centerX" id="6tw-aL-xmy"/>
                                         <constraint firstItem="E7K-cX-nl2" firstAttribute="centerY" secondItem="U1A-Mu-G6B" secondAttribute="centerY" id="Uhq-sD-8Jl"/>
@@ -84,13 +83,20 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-bI-T9Y">
+                                                            <rect key="frame" x="325" y="8" width="22" height="22"/>
+                                                            <connections>
+                                                                <segue destination="jec-z7-71U" kind="showDetail" identifier="Show Asteroid Detail" id="Yef-JN-76V"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="rLU-JR-CXn" firstAttribute="top" secondItem="4tb-du-WMs" secondAttribute="bottom" constant="8" symbolic="YES" id="0gt-AS-hfv"/>
                                                         <constraint firstAttribute="trailing" secondItem="Pno-Dd-1wV" secondAttribute="trailing" constant="8" id="8SJ-xb-27b"/>
                                                         <constraint firstAttribute="bottom" secondItem="rLU-JR-CXn" secondAttribute="bottom" constant="8" id="BWr-LH-ADt"/>
                                                         <constraint firstAttribute="trailing" secondItem="4tb-du-WMs" secondAttribute="trailing" constant="8" id="DGh-12-pKT"/>
+                                                        <constraint firstItem="aWg-bI-T9Y" firstAttribute="top" secondItem="v6M-Nj-l7x" secondAttribute="top" constant="8" id="F3o-bO-HS5"/>
                                                         <constraint firstAttribute="trailing" secondItem="8JZ-2G-gFe" secondAttribute="trailing" constant="8" id="NOf-lw-qo7"/>
                                                         <constraint firstItem="Pno-Dd-1wV" firstAttribute="centerX" secondItem="v6M-Nj-l7x" secondAttribute="centerX" id="Na6-At-U3S"/>
                                                         <constraint firstItem="4tb-du-WMs" firstAttribute="leading" secondItem="v6M-Nj-l7x" secondAttribute="leading" constant="8" id="P6D-jP-p6s"/>
@@ -101,6 +107,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="rLU-JR-CXn" secondAttribute="trailing" constant="8" id="hsF-14-Vm3"/>
                                                         <constraint firstItem="8JZ-2G-gFe" firstAttribute="top" secondItem="v6M-Nj-l7x" secondAttribute="top" constant="8" id="my6-53-QwJ"/>
                                                         <constraint firstItem="8JZ-2G-gFe" firstAttribute="leading" secondItem="v6M-Nj-l7x" secondAttribute="leading" constant="8" id="oJP-aw-P2l"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aWg-bI-T9Y" secondAttribute="trailing" constant="8" id="qOu-5v-kPA"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
@@ -116,12 +123,11 @@
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" red="0.0" green="0.88235294117647056" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="v6M-Nj-l7x" firstAttribute="top" secondItem="g42-3H-TAE" secondAttribute="top" constant="10" id="1jv-T4-l80"/>
                                                 <constraint firstAttribute="trailing" secondItem="v6M-Nj-l7x" secondAttribute="trailing" constant="10" id="A6X-EY-EEa"/>
@@ -131,6 +137,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="asteroidView" destination="v6M-Nj-l7x" id="zyu-DF-6AT"/>
+                                            <outlet property="detailButton" destination="aWg-bI-T9Y" id="VlB-3I-q3B"/>
                                             <outlet property="diameterLabel" destination="8JZ-2G-gFe" id="xsK-Vf-fhM"/>
                                             <outlet property="distanceLabel" destination="4tb-du-WMs" id="lIW-aC-cGG"/>
                                             <outlet property="nameLabel" destination="Pno-Dd-1wV" id="7mg-7g-jee"/>
@@ -148,7 +155,7 @@
                             <constraint firstAttribute="trailing" secondItem="vcV-BE-PcK" secondAttribute="trailing" id="o4E-iF-TdZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="j2B-AG-fsn"/>
+                    <navigationItem key="navigationItem" title="Астероиды" id="j2B-AG-fsn"/>
                     <connections>
                         <outlet property="asteroidsListTableView" destination="vcV-BE-PcK" id="mQx-5a-psA"/>
                         <outlet property="dataService" destination="vrs-Ga-xdn" id="xnE-fX-Rfu"/>
@@ -163,6 +170,66 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="1988" y="451.12443778110946"/>
+        </scene>
+        <!--Orbital Detail View Controller-->
+        <scene sceneID="Nj4-hC-K0r">
+            <objects>
+                <viewController id="jec-z7-71U" customClass="OrbitalDetailViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PSJ-98-Lzv"/>
+                        <viewControllerLayoutGuide type="bottom" id="AyY-qI-tbi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IDe-jh-lVq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FkI-KL-s8N">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Информация об орбите" id="4SU-bT-Gn7">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zDn-Wl-1I7">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="jec-z7-71U" id="ibh-UR-yZU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YrW-lI-PUb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orbitalDataCell" rowHeight="132" id="AtW-E9-DbA">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="132"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AtW-E9-DbA" id="rV9-Yd-qVu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="132"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FkI-KL-s8N" secondAttribute="trailing" id="7QJ-XM-C9S"/>
+                            <constraint firstItem="FkI-KL-s8N" firstAttribute="leading" secondItem="IDe-jh-lVq" secondAttribute="leading" id="8Mf-ty-1wk"/>
+                            <constraint firstItem="AyY-qI-tbi" firstAttribute="top" secondItem="YrW-lI-PUb" secondAttribute="bottom" id="Je8-rt-ezw"/>
+                            <constraint firstItem="YrW-lI-PUb" firstAttribute="top" secondItem="FkI-KL-s8N" secondAttribute="bottom" id="N1f-cl-UnR"/>
+                            <constraint firstItem="FkI-KL-s8N" firstAttribute="top" secondItem="PSJ-98-Lzv" secondAttribute="bottom" id="hWe-IO-OxI"/>
+                            <constraint firstItem="YrW-lI-PUb" firstAttribute="leading" secondItem="IDe-jh-lVq" secondAttribute="leading" id="jZw-SH-2dw"/>
+                            <constraint firstAttribute="trailing" secondItem="YrW-lI-PUb" secondAttribute="trailing" id="wg0-cj-zgF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataService" destination="Tin-cE-Q3J" id="zLg-Oo-cKT"/>
+                        <outlet property="orbitalDataTableView" destination="YrW-lI-PUb" id="AGp-98-KpX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cU-gy-QFp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="Tin-cE-Q3J" customClass="OrbitalDataService" customModule="Asteroids" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="2816.8000000000002" y="450.22488755622192"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8I1-KB-0G2">

@@ -59,4 +59,19 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show Asteroid Detail" {
+            if let vc = segue.destination as? OrbitalDetailViewController {
+                let senderButton = sender as! UIButton
+                let buttonPosition = senderButton.convert(CGPoint(), to:asteroidsListTableView)
+                let indexPath = asteroidsListTableView.indexPathForRow(at:buttonPosition) ?? IndexPath()
+                
+                let date = asteroidManager.getDateAtIndex(index: indexPath.section)
+                let asteroid = asteroidManager.getAsteroidAtIndexForDate(index: indexPath.row, date: date)
+                let asteroidUid = asteroid?.uid ?? ""
+                vc.asteroidUid = asteroidUid
+                
+            }
+        }
+    }
 }

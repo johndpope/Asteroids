@@ -15,6 +15,7 @@ class AsteroidTableViewCell: UITableViewCell {
     @IBOutlet weak var diameterLabel: UILabel!
     @IBOutlet weak var velocityLabel: UILabel!
     @IBOutlet weak var asteroidView: AsteroidView!
+    @IBOutlet weak var detailButton: UIButton!
     
     func configureCellWith(asteroidViewModel: AsteroidViewModel) {
         nameLabel.text = asteroidViewModel.nameText
@@ -23,7 +24,10 @@ class AsteroidTableViewCell: UITableViewCell {
         velocityLabel.text = asteroidViewModel.velocity
         
         if asteroidViewModel.isDangerous {
-            asteroidView.shadowColor = UIColor(red: 225.0/255.0, green: 0.0, blue: 0.0, alpha: 1.0)
+            asteroidView.shadowColor = UIColor(red: 255.0/255.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        } else {
+            asteroidView.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         }
+        detailButton.isHidden = !asteroidViewModel.isDangerous
     }
 }

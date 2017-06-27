@@ -10,11 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol AsteroidManagerDelegate: class {
-    func handleResult(asteroids: Dictionary<String, [Asteroid]>)
-    func handleErrorWithMessage(errorMessage: String)
-}
-
 class AsteroidManager {
     var dateArrayCount: Int { return dateArray.count }
     var lastDateInArray: String { return self.dateArray.last ?? "" }

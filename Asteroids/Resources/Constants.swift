@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     static let apiKey = "P2IXOQjycpTCmQkAsIofUoxaVN0B7Zg64lJAGPHh"
     static let apiGetAsteroidsList = "https://api.nasa.gov/neo/rest/v1/feed"
+    static let apiGetAsteroid = "https://api.nasa.gov/neo/rest/v1/neo"
     
     static var system: String {
         get {
