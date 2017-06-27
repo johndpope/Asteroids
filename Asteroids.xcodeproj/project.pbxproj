@@ -19,6 +19,10 @@
 		8325BD261EF99CC400E8985D /* AsteroidCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD251EF99CC400E8985D /* AsteroidCellTests.swift */; };
 		83C9FBBF1EFD845F00E4F94C /* Date+Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */; };
 		83C9FBC11F016DE000E4F94C /* AsteroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC01F016DE000E4F94C /* AsteroidView.swift */; };
+		83C9FBC31F02BB0F00E4F94C /* OrbitalDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC21F02BB0F00E4F94C /* OrbitalDataServiceTests.swift */; };
+		83C9FBC51F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */; };
+		83C9FBC71F02CA0900E4F94C /* OrbitalManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */; };
+		83C9FBC91F02CBF700E4F94C /* OrbitalDataCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC81F02CBF700E4F94C /* OrbitalDataCellTests.swift */; };
 		9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917421EF7E584003B6F25 /* AppDelegate.swift */; };
 		9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917461EF7E584003B6F25 /* Main.storyboard */; };
 		9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917491EF7E584003B6F25 /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 		8325BD251EF99CC400E8985D /* AsteroidCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidCellTests.swift; sourceTree = "<group>"; };
 		83C9FBBE1EFD845F00E4F94C /* Date+Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Calendar.swift"; path = "Extension/Date+Calendar.swift"; sourceTree = "<group>"; };
 		83C9FBC01F016DE000E4F94C /* AsteroidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidView.swift; path = View/AsteroidView.swift; sourceTree = "<group>"; };
+		83C9FBC21F02BB0F00E4F94C /* OrbitalDataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitalDataServiceTests.swift; sourceTree = "<group>"; };
+		83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrbitalDataTableViewCell.swift; path = View/OrbitalDataTableViewCell.swift; sourceTree = "<group>"; };
+		83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitalManagerTests.swift; sourceTree = "<group>"; };
+		83C9FBC81F02CBF700E4F94C /* OrbitalDataCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitalDataCellTests.swift; sourceTree = "<group>"; };
 		9A19173F1EF7E584003B6F25 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1917421EF7E584003B6F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1917471EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 			children = (
 				8325BD1D1EF9914300E8985D /* AsteroidTableViewCell.swift */,
 				83C9FBC01F016DE000E4F94C /* AsteroidView.swift */,
+				83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,6 +120,7 @@
 			children = (
 				9A1917571EF7E584003B6F25 /* AsteroidModelsTests.swift */,
 				8325BD221EF99A6700E8985D /* AsteroidManagerTests.swift */,
+				83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 			children = (
 				8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */,
 				8325BD191EF8453700E8985D /* AsteroidsListDataServiceTests.swift */,
+				83C9FBC21F02BB0F00E4F94C /* OrbitalDataServiceTests.swift */,
 			);
 			name = TestControllers;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8325BD251EF99CC400E8985D /* AsteroidCellTests.swift */,
+				83C9FBC81F02CBF700E4F94C /* OrbitalDataCellTests.swift */,
 			);
 			name = TestViews;
 			sourceTree = "<group>";
@@ -411,6 +423,7 @@
 				8325BD1E1EF9914300E8985D /* AsteroidTableViewCell.swift in Sources */,
 				9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */,
 				9A19177B1EF7FD31003B6F25 /* AsteroidsViewController.swift in Sources */,
+				83C9FBC51F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift in Sources */,
 				9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */,
 				9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */,
 				8325BD1C1EF9889F00E8985D /* AsteroidManager.swift in Sources */,
@@ -430,12 +443,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C9FBC31F02BB0F00E4F94C /* OrbitalDataServiceTests.swift in Sources */,
 				8325BD231EF99A6700E8985D /* AsteroidManagerTests.swift in Sources */,
 				8325BD1A1EF8453700E8985D /* AsteroidsListDataServiceTests.swift in Sources */,
 				8325BD261EF99CC400E8985D /* AsteroidCellTests.swift in Sources */,
 				8325BD211EF995D700E8985D /* MockExtensions.swift in Sources */,
 				9A1917581EF7E584003B6F25 /* AsteroidModelsTests.swift in Sources */,
+				83C9FBC91F02CBF700E4F94C /* OrbitalDataCellTests.swift in Sources */,
 				8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */,
+				83C9FBC71F02CA0900E4F94C /* OrbitalManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

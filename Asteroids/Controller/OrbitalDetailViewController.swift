@@ -18,6 +18,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         orbitalManager.delegate = self
+        dataService.orbitalManager = orbitalManager
 
         orbitalDataTableView.dataSource = dataService
         orbitalDataTableView.delegate = dataService
@@ -29,8 +30,8 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     }
     
     //MARK: - Handle request results
-    func handleOrbitalDataResults(asteroidOrbitalData: Dictionary<String, String>) {
-        print("mmmm")
+    func handleOrbitalDataResults() {
+        orbitalDataTableView.reloadData()
     }
     
     func handleErrorWithMessage(errorMessage: String) {
@@ -40,6 +41,10 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     //MARK: - Actions
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
     }
     
     func showAlertWithTitle(_ title: String, andMessage message: String) {

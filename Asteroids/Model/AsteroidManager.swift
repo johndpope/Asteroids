@@ -117,7 +117,7 @@ class AsteroidManager {
                             asteroidsArray.removeAll()
                         }
                     }
-                    self.delegate?.handleResult(asteroids: self.asteroids)
+                    self.delegate?.handleResult()
                 } else {
                     //get error
                     self.delegate?.handleErrorWithMessage(errorMessage: json["error_message"].stringValue)

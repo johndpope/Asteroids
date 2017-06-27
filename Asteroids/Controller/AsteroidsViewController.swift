@@ -37,7 +37,7 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
     }
     
     //MARK: - Handle request results
-    func handleResult(asteroids: Dictionary<String, [Asteroid]>) {
+    func handleResult() {
         tableFooterView.isHidden = true
         asteroidsListTableView.reloadData()
     }

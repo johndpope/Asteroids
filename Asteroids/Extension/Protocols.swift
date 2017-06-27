@@ -9,11 +9,11 @@
 import Foundation
 
 protocol AsteroidManagerDelegate: class {
-    func handleResult(asteroids: Dictionary<String, [Asteroid]>)
+    func handleResult()
     func handleErrorWithMessage(errorMessage: String)
 }
 
 protocol OrbitalManagerDelegate: class {
-    func handleOrbitalDataResults(asteroidOrbitalData: Dictionary<String, String>)
+    func handleOrbitalDataResults()
     func handleErrorWithMessage(errorMessage: String)
 }
