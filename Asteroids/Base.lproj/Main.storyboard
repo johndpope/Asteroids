@@ -113,13 +113,13 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.80000000000000004"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                            <size key="value" width="1" height="1"/>
+                                                            <size key="value" width="2" height="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
@@ -127,9 +127,11 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                                             <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="_clipsToBounds" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.56470588235294117" green="0.792156862745098" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="v6M-Nj-l7x" firstAttribute="top" secondItem="g42-3H-TAE" secondAttribute="top" constant="10" id="1jv-T4-l80"/>
                                                 <constraint firstAttribute="trailing" secondItem="v6M-Nj-l7x" secondAttribute="trailing" constant="10" id="A6X-EY-EEa"/>
@@ -243,11 +245,6 @@
                                                 <action selector="cancelButtonPressed:" destination="jec-z7-71U" id="ibh-UR-yZU"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="q2C-sb-i9C">
-                                            <connections>
-                                                <action selector="shareButtonPressed:" destination="jec-z7-71U" id="k1o-u4-dgw"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -273,30 +270,11 @@
             </objects>
             <point key="canvasLocation" x="2816.8000000000002" y="450.22488755622192"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="8I1-KB-0G2">
-            <objects>
-                <viewController id="gC6-ns-UJC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7tY-oz-8OD"/>
-                        <viewControllerLayoutGuide type="bottom" id="jNx-2M-NKb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0fF-Qw-foy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ss0-iX-oSw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XQ8-xb-sUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1988" y="1130"/>
-        </scene>
         <!--List-->
         <scene sceneID="uS9-5i-pOj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3rN-LA-I3N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="dwS-Db-xIT"/>
+                    <tabBarItem key="tabBarItem" title="List" image="ListTabIcon" id="dwS-Db-xIT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8yE-qp-Gwu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -323,31 +301,89 @@
                     </tabBar>
                     <connections>
                         <segue destination="3rN-LA-I3N" kind="relationship" relationship="viewControllers" id="Trh-PK-Axc"/>
-                        <segue destination="c2c-zK-Uev" kind="relationship" relationship="viewControllers" id="yvy-dz-dRb"/>
+                        <segue destination="2E7-Lb-b8a" kind="relationship" relationship="viewControllers" id="2Hr-5i-d2y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxd-0W-qHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="791.15442278860576"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="nJl-8r-Hrz">
+        <!--Настройки-->
+        <scene sceneID="NQn-By-S8O">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c2c-zK-Uev" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="UdH-eB-IMD"/>
+                <viewController id="mYa-aQ-uVG" customClass="SettingsViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="biL-BF-hGJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0IP-eY-8kX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TMk-Vy-XYH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h2A-vb-1EX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="SettingsCell" textLabel="m5g-JH-oqo" rowHeight="40" style="IBUITableViewCellStyleDefault" id="VC5-cM-UUH">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VC5-cM-UUH" id="or8-TH-QIB">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="39.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m5g-JH-oqo">
+                                                    <rect key="frame" x="15" y="0.0" width="321" height="39.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mYa-aQ-uVG" id="ihj-cM-b1g"/>
+                                    <outlet property="delegate" destination="mYa-aQ-uVG" id="i95-YW-cG3"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="h2A-vb-1EX" secondAttribute="bottom" id="4U9-Rk-BFM"/>
+                            <constraint firstItem="h2A-vb-1EX" firstAttribute="top" secondItem="TMk-Vy-XYH" secondAttribute="top" id="c9M-qt-Qta"/>
+                            <constraint firstAttribute="trailing" secondItem="h2A-vb-1EX" secondAttribute="trailing" id="hiC-t6-5pV"/>
+                            <constraint firstItem="h2A-vb-1EX" firstAttribute="leading" secondItem="TMk-Vy-XYH" secondAttribute="leading" id="ugo-af-BTb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Настройки" id="zwE-hd-pQt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WD-Az-2gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="1153.6731634182909"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="laf-ON-MPu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2E7-Lb-b8a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsTabIcon" id="9Qr-sy-lQt"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cj-qO-UMT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u1h-xS-Jjb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="gC6-ns-UJC" kind="relationship" relationship="rootViewController" id="Zkr-XF-I52"/>
+                        <segue destination="mYa-aQ-uVG" kind="relationship" relationship="rootViewController" id="m51-Zd-mt4"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1k-jM-ucO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Oh-dg-dWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="1130"/>
+            <point key="canvasLocation" x="1048.8" y="1153.6731634182909"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ListTabIcon" width="16" height="16"/>
+        <image name="SettingsTabIcon" width="16" height="16"/>
+    </resources>
 </document>

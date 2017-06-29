@@ -43,10 +43,6 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
-    }
-    
     func showAlertWithTitle(_ title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         

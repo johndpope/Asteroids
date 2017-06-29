@@ -16,6 +16,8 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
     
     var asteroidManager: AsteroidManager = AsteroidManager()
     
+    //MARK: - View Controller Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,10 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
         let today = Date()
         let todayPlus7 = today.dateFromDays(7)
         asteroidManager.getAsteroids(startDate: today, endDate: todayPlus7)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        asteroidsListTableView.reloadData()
     }
     
     //MARK: - Handle request results
