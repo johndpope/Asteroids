@@ -39,13 +39,32 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let asteroidManager = asteroidManager else { return "" }
-        return asteroidManager.dateForSection(index: section)
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        guard let asteroidManager = asteroidManager else { return "" }
+//        return asteroidManager.dateForSection(index: section)
+//    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        var title = ""
+        if let asteroidManager = asteroidManager {
+            title = asteroidManager.dateForSection(index: section)
+        }
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        headerView.backgroundColor = UIColor(red: 144.0/255.0, green: 202.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+        
+        let titleLabel = UILabel(frame: CGRect(x: 8, y: 0, width: tableView.frame.size.width - 16, height: 50))
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        titleLabel.text = title
+        
+        headerView.addSubview(titleLabel)
+        
+        return headerView
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

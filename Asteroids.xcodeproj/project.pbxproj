@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1FA422CA5677F079745F4EBD /* Pods_Asteroids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9492F4B7A95C19001F8A4 /* Pods_Asteroids.framework */; };
+		8316FE641F0AD9AC009037D2 /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 8316FE631F0AD9AC009037D2 /* icon512.png */; };
 		8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD0E1EF835A800E8985D /* SettingsViewController.swift */; };
 		8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */; };
 		8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		37E506058939E752C04C8337 /* Pods-Asteroids.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.debug.xcconfig"; sourceTree = "<group>"; };
 		7409F1BF74ED195B0EF8473A /* Pods-Asteroids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.release.xcconfig"; sourceTree = "<group>"; };
+		8316FE631F0AD9AC009037D2 /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon512.png; sourceTree = "<group>"; };
 		8325BD0E1EF835A800E8985D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
 		8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsViewControllerTests.swift; sourceTree = "<group>"; };
 		8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidsListDataService.swift; path = Controller/AsteroidsListDataService.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8316FE601F0AD7DD009037D2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8316FE631F0AD9AC009037D2 /* icon512.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		8325BD101EF8360D00E8985D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 		9A1917761EF7E5DB003B6F25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8316FE601F0AD7DD009037D2 /* Images */,
 				9A1917771EF7E5FF003B6F25 /* Constants.swift */,
 				9A1917461EF7E584003B6F25 /* Main.storyboard */,
 				9A1917491EF7E584003B6F25 /* Assets.xcassets */,
@@ -319,6 +330,7 @@
 				TargetAttributes = {
 					9A19173E1EF7E584003B6F25 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = G548HJ9ST6;
 						ProvisioningStyle = Automatic;
 					};
 					9A1917521EF7E584003B6F25 = {
@@ -355,6 +367,7 @@
 				9A19174D1EF7E584003B6F25 /* LaunchScreen.storyboard in Resources */,
 				9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */,
 				9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */,
+				8316FE641F0AD9AC009037D2 /* icon512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +597,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 37E506058939E752C04C8337 /* Pods-Asteroids.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G548HJ9ST6;
 				INFOPLIST_FILE = Asteroids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oO.Asteroids;
@@ -597,7 +612,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7409F1BF74ED195B0EF8473A /* Pods-Asteroids.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = G548HJ9ST6;
 				INFOPLIST_FILE = Asteroids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oO.Asteroids;

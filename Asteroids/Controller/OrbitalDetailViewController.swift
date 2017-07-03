@@ -11,6 +11,9 @@ import UIKit
 class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     
     var asteroidUid = ""
+    var asteroidName = ""
+    var asteroidDate = ""
+    
     var orbitalManager: OrbitalManager = OrbitalManager()
     @IBOutlet var dataService: OrbitalDataService!
     @IBOutlet weak var orbitalDataTableView: UITableView!
@@ -41,6 +44,31 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     //MARK: - Actions
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
+        
+        // text to share
+        var text = "Скорее всего мы все умрем \(asteroidDate) от астероида под именем \(asteroidName)\nДанные орбиты:\n"
+        
+        //get orbital data
+        for i in 0 ..< orbitalManager.dataCount {
+            let orbitalParameter = orbitalManager.getOrbitalParameterAtIndex(index: i)
+            for (key,value) in orbitalParameter {
+                text += "\(key): \(value)\n"
+            }
+        }
+        
+        // set up activity view controller
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func showAlertWithTitle(_ title: String, andMessage message: String) {

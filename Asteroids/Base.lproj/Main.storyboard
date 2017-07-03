@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Астероиды-->
+        <!--Ближайшие астероиды-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="AsteroidsListVC" id="BYZ-38-t0r" customClass="AsteroidsViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,19 +150,42 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YQ-XL-xxb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon512.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Ky-Fq-Ldk">
+                                        <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="KEB-wW-0E4"/>
+                                            <constraint firstAttribute="width" constant="100" id="she-kv-B75"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9Ky-Fq-Ldk" firstAttribute="centerY" secondItem="7YQ-XL-xxb" secondAttribute="centerY" id="MfS-GI-3DZ"/>
+                                    <constraint firstItem="9Ky-Fq-Ldk" firstAttribute="centerX" secondItem="7YQ-XL-xxb" secondAttribute="centerX" id="Q1u-eN-pQL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="vcV-BE-PcK" secondAttribute="bottom" id="1g0-Cg-b66"/>
+                            <constraint firstAttribute="bottom" secondItem="7YQ-XL-xxb" secondAttribute="bottom" id="Bgi-cz-B5f"/>
                             <constraint firstItem="vcV-BE-PcK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ExG-j1-JXe"/>
+                            <constraint firstItem="7YQ-XL-xxb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KwH-zl-haC"/>
                             <constraint firstItem="vcV-BE-PcK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="los-6k-Dge"/>
                             <constraint firstAttribute="trailing" secondItem="vcV-BE-PcK" secondAttribute="trailing" id="o4E-iF-TdZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7YQ-XL-xxb" secondAttribute="trailing" id="sNE-jj-uc9"/>
+                            <constraint firstItem="7YQ-XL-xxb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yzQ-B3-9KE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Астероиды" id="j2B-AG-fsn"/>
+                    <navigationItem key="navigationItem" title="Ближайшие астероиды" id="j2B-AG-fsn"/>
                     <connections>
+                        <outlet property="asteroidImageView" destination="9Ky-Fq-Ldk" id="8qL-D1-lPB"/>
                         <outlet property="asteroidsListTableView" destination="vcV-BE-PcK" id="mQx-5a-psA"/>
                         <outlet property="dataService" destination="vrs-Ga-xdn" id="xnE-fX-Rfu"/>
+                        <outlet property="loadingView" destination="7YQ-XL-xxb" id="xpQ-by-3IR"/>
                         <outlet property="tableFooterView" destination="U1A-Mu-G6B" id="YOx-xu-H9c"/>
                     </connections>
                 </viewController>
@@ -245,6 +268,11 @@
                                                 <action selector="cancelButtonPressed:" destination="jec-z7-71U" id="ibh-UR-yZU"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="5oz-9T-MgU">
+                                            <connections>
+                                                <action selector="shareButtonPressed:" destination="jec-z7-71U" id="DCQ-vo-m1Q"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -322,7 +350,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h2A-vb-1EX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="SettingsCell" textLabel="m5g-JH-oqo" rowHeight="40" style="IBUITableViewCellStyleDefault" id="VC5-cM-UUH">
                                         <rect key="frame" x="0.0" y="28" width="375" height="40"/>
@@ -339,7 +369,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -348,7 +380,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="h2A-vb-1EX" secondAttribute="bottom" id="4U9-Rk-BFM"/>
                             <constraint firstItem="h2A-vb-1EX" firstAttribute="top" secondItem="TMk-Vy-XYH" secondAttribute="top" id="c9M-qt-Qta"/>
@@ -385,5 +417,6 @@
     <resources>
         <image name="ListTabIcon" width="16" height="16"/>
         <image name="SettingsTabIcon" width="16" height="16"/>
+        <image name="icon512.png" width="512" height="512"/>
     </resources>
 </document>
