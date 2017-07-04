@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FA422CA5677F079745F4EBD /* Pods_Asteroids.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C9492F4B7A95C19001F8A4 /* Pods_Asteroids.framework */; };
 		8316FE641F0AD9AC009037D2 /* icon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 8316FE631F0AD9AC009037D2 /* icon512.png */; };
+		8316FE741F0C0968009037D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8316FE721F0C0968009037D2 /* Localizable.strings */; };
 		8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD0E1EF835A800E8985D /* SettingsViewController.swift */; };
 		8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */; };
 		8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */; };
@@ -53,6 +54,28 @@
 		37E506058939E752C04C8337 /* Pods-Asteroids.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.debug.xcconfig"; sourceTree = "<group>"; };
 		7409F1BF74ED195B0EF8473A /* Pods-Asteroids.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Asteroids.release.xcconfig"; path = "Pods/Target Support Files/Pods-Asteroids/Pods-Asteroids.release.xcconfig"; sourceTree = "<group>"; };
 		8316FE631F0AD9AC009037D2 /* icon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon512.png; sourceTree = "<group>"; };
+		8316FE681F0C03E7009037D2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE691F0C04FD009037D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE6A1F0C0502009037D2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE6B1F0C0509009037D2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE6C1F0C0511009037D2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE6D1F0C0523009037D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		8316FE6E1F0C0531009037D2 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
+		8316FE6F1F0C0539009037D2 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE701F0C0544009037D2 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE711F0C0553009037D2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		8316FE731F0C0968009037D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE751F0C096E009037D2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE761F0C096F009037D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE771F0C0972009037D2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE781F0C0973009037D2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE791F0C0984009037D2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE7A1F0C0985009037D2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8316FE7B1F0C0986009037D2 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE7C1F0C0987009037D2 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8316FE7D1F0C098A009037D2 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE7E1F0C098B009037D2 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8316FE7F1F0C098C009037D2 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8325BD0E1EF835A800E8985D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controller/SettingsViewController.swift; sourceTree = "<group>"; };
 		8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidsViewControllerTests.swift; sourceTree = "<group>"; };
 		8325BD171EF83D5500E8985D /* AsteroidsListDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsteroidsListDataService.swift; path = Controller/AsteroidsListDataService.swift; sourceTree = "<group>"; };
@@ -243,6 +266,7 @@
 				9A1917491EF7E584003B6F25 /* Assets.xcassets */,
 				9A19174B1EF7E584003B6F25 /* LaunchScreen.storyboard */,
 				9A19174E1EF7E584003B6F25 /* Info.plist */,
+				8316FE721F0C0968009037D2 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -347,6 +371,16 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				fr,
+				de,
+				es,
+				"zh-Hans",
+				it,
+				"pt-PT",
+				cs,
+				fi,
+				sv,
 			);
 			mainGroup = 9A1917361EF7E584003B6F25;
 			productRefGroup = 9A1917401EF7E584003B6F25 /* Products */;
@@ -364,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8316FE741F0C0968009037D2 /* Localizable.strings in Resources */,
 				9A19174D1EF7E584003B6F25 /* LaunchScreen.storyboard in Resources */,
 				9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */,
 				9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */,
@@ -479,10 +514,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8316FE721F0C0968009037D2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8316FE731F0C0968009037D2 /* Base */,
+				8316FE751F0C096E009037D2 /* ru */,
+				8316FE761F0C096F009037D2 /* en */,
+				8316FE771F0C0972009037D2 /* fr */,
+				8316FE781F0C0973009037D2 /* de */,
+				8316FE791F0C0984009037D2 /* es */,
+				8316FE7A1F0C0985009037D2 /* zh-Hans */,
+				8316FE7B1F0C0986009037D2 /* it */,
+				8316FE7C1F0C0987009037D2 /* pt-PT */,
+				8316FE7D1F0C098A009037D2 /* cs */,
+				8316FE7E1F0C098B009037D2 /* fi */,
+				8316FE7F1F0C098C009037D2 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9A1917461EF7E584003B6F25 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9A1917471EF7E584003B6F25 /* Base */,
+				8316FE681F0C03E7009037D2 /* ru */,
+				8316FE691F0C04FD009037D2 /* fr */,
+				8316FE6A1F0C0502009037D2 /* de */,
+				8316FE6B1F0C0509009037D2 /* es */,
+				8316FE6C1F0C0511009037D2 /* it */,
+				8316FE6D1F0C0523009037D2 /* zh-Hans */,
+				8316FE6E1F0C0531009037D2 /* pt-PT */,
+				8316FE6F1F0C0539009037D2 /* cs */,
+				8316FE701F0C0544009037D2 /* fi */,
+				8316FE711F0C0553009037D2 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -502,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -553,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -601,10 +667,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G548HJ9ST6;
 				INFOPLIST_FILE = Asteroids/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oO.Asteroids;
+				PRODUCT_BUNDLE_IDENTIFIER = olegshamin.Asteroids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -616,10 +684,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G548HJ9ST6;
 				INFOPLIST_FILE = Asteroids/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = oO.Asteroids;
+				PRODUCT_BUNDLE_IDENTIFIER = olegshamin.Asteroids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

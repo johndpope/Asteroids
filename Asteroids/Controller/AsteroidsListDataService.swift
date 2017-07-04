@@ -39,11 +39,6 @@ class AsteroidsListDataService: NSObject, UITableViewDataSource, UITableViewDele
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        guard let asteroidManager = asteroidManager else { return "" }
-//        return asteroidManager.dateForSection(index: section)
-//    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }

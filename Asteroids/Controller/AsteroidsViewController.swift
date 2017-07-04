@@ -36,12 +36,11 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
         
         tableFooterView.isHidden = true
         
-        zoomInAnimation()
-        
         //first update asteroids
         let today = Date()
         let todayPlus7 = today.dateFromDays(7)
         asteroidManager.getAsteroids(startDate: today, endDate: todayPlus7)
+        zoomInAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {

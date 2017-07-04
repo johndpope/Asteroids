@@ -1,0 +1,39 @@
+
+/* Class = "UINavigationItem"; title = "Orbit Information"; ObjectID = "4SU-bT-Gn7"; */
+"4SU-bT-Gn7.title" = "Orbit Informationen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4tb-du-WMs"; */
+"4tb-du-WMs.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8JZ-2G-gFe"; */
+"8JZ-2G-gFe.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "9Qr-sy-lQt"; */
+"9Qr-sy-lQt.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Pno-Dd-1wV"; */
+"Pno-Dd-1wV.text" = "Name";
+
+/* Class = "UILabel"; text = "parameterValue"; ObjectID = "Y2y-xV-gNy"; */
+"Y2y-xV-gNy.text" = "parameterValue";
+
+/* Class = "UITabBarItem"; title = "List"; ObjectID = "dwS-Db-xIT"; */
+"dwS-Db-xIT.title" = "Asteroiden";
+
+/* Class = "UILabel"; text = "parameterKey"; ObjectID = "gO6-as-8St"; */
+"gO6-as-8St.text" = "parameterKey";
+
+/* Class = "UINavigationItem"; title = "Nearest Asteroids"; ObjectID = "j2B-AG-fsn"; */
+"j2B-AG-fsn.title" = "Nächste Asteroiden";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "m5g-JH-oqo"; */
+"m5g-JH-oqo.text" = "Title";
+
+/* Class = "UILabel"; text = "Download..."; ObjectID = "qU4-ZF-MNP"; */
+"qU4-ZF-MNP.text" = "Herunterladen...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rLU-JR-CXn"; */
+"rLU-JR-CXn.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "zwE-hd-pQt"; */
+"zwE-hd-pQt.title" = "Einstellungen";

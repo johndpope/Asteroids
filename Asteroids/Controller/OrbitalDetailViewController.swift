@@ -17,6 +17,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     var orbitalManager: OrbitalManager = OrbitalManager()
     @IBOutlet var dataService: OrbitalDataService!
     @IBOutlet weak var orbitalDataTableView: UITableView!
+    @IBOutlet weak var activityView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     //MARK: - Handle request results
     func handleOrbitalDataResults() {
         orbitalDataTableView.reloadData()
+        activityView.isHidden = true
     }
     
     func handleErrorWithMessage(errorMessage: String) {

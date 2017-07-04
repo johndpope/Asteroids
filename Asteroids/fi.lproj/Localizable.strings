@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Asteroids
+
+  Created by bu on 04/07/2017.
+  Copyright © 2017 olegshamin. All rights reserved.
+*/
+"Diameter" = "Diameter";
+"Distance" = "Distance";
+"Velocity" = "Velocity";
+"km" = "km";
+"m" = "m";
+"kmh" = "kmh";
+"mph" = "mph";
+"mi" = "mi";
+"lb" = "lb";

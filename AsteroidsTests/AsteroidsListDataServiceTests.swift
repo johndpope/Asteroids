@@ -138,22 +138,5 @@ class AsteroidsListDataServiceTests: XCTestCase {
         
     }
     
-    func testTableViewHeaderTitles_ShouldReturnCorrectValues() {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let date1 = dateFormatter.date(from: "2017-06-22")
-        let date2 = dateFormatter.date(from: "2017-06-23")
-        sut.asteroidManager?.appendDates(dates: [date1!,date2!])
-        
-//        sut.asteroidManager?.addDate(date: "2017-06-22")
-//        sut.asteroidManager?.addDate(date: "2017-06-23")
-        let section1Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 0)
-        let section2Title = tableView.dataSource?.tableView!(tableView, titleForHeaderInSection: 1)
-        
-        XCTAssertEqual(section1Title, "22.06.17")
-        XCTAssertEqual(section2Title, "23.06.17")
-    }
-    
 }
 

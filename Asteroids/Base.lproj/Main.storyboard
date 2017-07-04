@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ближайшие астероиды-->
+        <!--Nearest Asteroids-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="AsteroidsListVC" id="BYZ-38-t0r" customClass="AsteroidsViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,13 +31,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E7K-cX-nl2">
-                                            <rect key="frame" x="89" y="15" width="196.5" height="20"/>
+                                            <rect key="frame" x="128" y="15" width="118.5" height="20"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b58-iO-r7d">
                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                 </activityIndicatorView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Загружаем больше..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-ZF-MNP">
-                                                    <rect key="frame" x="28" y="0.0" width="168.5" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU4-ZF-MNP">
+                                                    <rect key="frame" x="28" y="0.0" width="90.5" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -180,7 +180,7 @@
                             <constraint firstItem="7YQ-XL-xxb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="yzQ-B3-9KE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ближайшие астероиды" id="j2B-AG-fsn"/>
+                    <navigationItem key="navigationItem" title="Nearest Asteroids" id="j2B-AG-fsn"/>
                     <connections>
                         <outlet property="asteroidImageView" destination="9Ky-Fq-Ldk" id="8qL-D1-lPB"/>
                         <outlet property="asteroidsListTableView" destination="vcV-BE-PcK" id="mQx-5a-psA"/>
@@ -262,7 +262,7 @@
                                     <constraint firstAttribute="height" constant="64" id="rFA-X0-wae"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Информация об орбите" id="4SU-bT-Gn7">
+                                    <navigationItem title="Orbit Information" id="4SU-bT-Gn7">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="zDn-Wl-1I7">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="jec-z7-71U" id="ibh-UR-yZU"/>
@@ -276,19 +276,37 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9S-5e-lSd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lwg-0y-4YD">
+                                        <rect key="frame" x="169" y="283" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lwg-0y-4YD" firstAttribute="centerX" secondItem="R9S-5e-lSd" secondAttribute="centerX" id="3vW-aS-xea"/>
+                                    <constraint firstItem="lwg-0y-4YD" firstAttribute="centerY" secondItem="R9S-5e-lSd" secondAttribute="centerY" id="zSu-7k-AbG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FkI-KL-s8N" secondAttribute="trailing" id="7QJ-XM-C9S"/>
                             <constraint firstItem="FkI-KL-s8N" firstAttribute="leading" secondItem="IDe-jh-lVq" secondAttribute="leading" id="8Mf-ty-1wk"/>
                             <constraint firstItem="AyY-qI-tbi" firstAttribute="top" secondItem="YrW-lI-PUb" secondAttribute="bottom" id="Je8-rt-ezw"/>
+                            <constraint firstAttribute="trailing" secondItem="R9S-5e-lSd" secondAttribute="trailing" id="KIU-Zw-l51"/>
                             <constraint firstItem="YrW-lI-PUb" firstAttribute="top" secondItem="FkI-KL-s8N" secondAttribute="bottom" id="N1f-cl-UnR"/>
+                            <constraint firstItem="R9S-5e-lSd" firstAttribute="leading" secondItem="IDe-jh-lVq" secondAttribute="leading" id="P7A-OI-4oM"/>
                             <constraint firstItem="FkI-KL-s8N" firstAttribute="top" secondItem="IDe-jh-lVq" secondAttribute="top" id="RGw-q2-n9d"/>
+                            <constraint firstItem="R9S-5e-lSd" firstAttribute="top" secondItem="FkI-KL-s8N" secondAttribute="bottom" id="dbL-pt-ODx"/>
                             <constraint firstItem="YrW-lI-PUb" firstAttribute="leading" secondItem="IDe-jh-lVq" secondAttribute="leading" id="jZw-SH-2dw"/>
                             <constraint firstAttribute="trailing" secondItem="YrW-lI-PUb" secondAttribute="trailing" id="wg0-cj-zgF"/>
+                            <constraint firstItem="AyY-qI-tbi" firstAttribute="top" secondItem="R9S-5e-lSd" secondAttribute="bottom" id="zVj-MP-Lpn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="R9S-5e-lSd" id="vIj-gV-Ph0"/>
                         <outlet property="dataService" destination="Tin-cE-Q3J" id="zLg-Oo-cKT"/>
                         <outlet property="orbitalDataTableView" destination="YrW-lI-PUb" id="AGp-98-KpX"/>
                     </connections>
@@ -298,11 +316,11 @@
             </objects>
             <point key="canvasLocation" x="2816.8000000000002" y="450.22488755622192"/>
         </scene>
-        <!--List-->
+        <!--Asteroids-->
         <scene sceneID="uS9-5i-pOj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3rN-LA-I3N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="ListTabIcon" id="dwS-Db-xIT"/>
+                    <tabBarItem key="tabBarItem" title="Asteroids" image="ListTabIcon" id="dwS-Db-xIT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8yE-qp-Gwu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -336,7 +354,7 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="791.15442278860576"/>
         </scene>
-        <!--Настройки-->
+        <!--Settings-->
         <scene sceneID="NQn-By-S8O">
             <objects>
                 <viewController id="mYa-aQ-uVG" customClass="SettingsViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
@@ -388,7 +406,7 @@
                             <constraint firstItem="h2A-vb-1EX" firstAttribute="leading" secondItem="TMk-Vy-XYH" secondAttribute="leading" id="ugo-af-BTb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Настройки" id="zwE-hd-pQt"/>
+                    <navigationItem key="navigationItem" title="Settings" id="zwE-hd-pQt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WD-Az-2gk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

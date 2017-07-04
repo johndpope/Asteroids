@@ -37,10 +37,10 @@ class AsteroidViewModel: Equatable {
             formatter.maximumFractionDigits = 0
             if Constants.system == System.metric.rawValue {
                 let velocityKmH = formatter.string(from: NSNumber(value: asteroid.velocityKmH))
-                return "Скорость: \(velocityKmH ?? ("--")) км/ч"
+                return "\(NSLocalizedString("Velocity", comment: "")): \(velocityKmH ?? ("--")) \(NSLocalizedString("kmh", comment: ""))"
             } else {
                 let velocityMilesH = formatter.string(from: NSNumber(value: asteroid.velocityMilesH))
-                return "Скорость: \(velocityMilesH ?? ("--")) миль/ч"
+                return "\(NSLocalizedString("Velocity", comment: "")): \(velocityMilesH ?? ("--")) \(NSLocalizedString("mph", comment: ""))"
             }
         }
     }
