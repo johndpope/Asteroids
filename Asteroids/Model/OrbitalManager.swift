@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class OrbitalManager {
     
-    weak var delegate: OrbitalManagerDelegate?
+    weak var delegate: AsteroidManagerDelegate?
     
     var dataCount: Int { return data.count }
     
@@ -46,7 +46,7 @@ class OrbitalManager {
                 
                 if orbitalData.count > 0 {
                     self.addOrbitalData(data: orbitalData)
-                    self.delegate?.handleOrbitalDataResults()
+                    self.delegate?.handleResult()
                 } else {
                     //get error
                     self.delegate?.handleErrorWithMessage(errorMessage: json["error_message"].stringValue)

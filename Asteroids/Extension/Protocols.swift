@@ -12,8 +12,3 @@ protocol AsteroidManagerDelegate: class {
     func handleResult()
     func handleErrorWithMessage(errorMessage: String)
 }
-
-protocol OrbitalManagerDelegate: class {
-    func handleOrbitalDataResults()
-    func handleErrorWithMessage(errorMessage: String)
-}

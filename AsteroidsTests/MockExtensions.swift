@@ -10,6 +10,33 @@ import Foundation
 import UIKit
 @testable import Asteroids
 
+extension SearchDataServiceTests {
+    class TableViewMock: UITableView {
+        var cellDequeuedProperly: Bool = false
+        
+        override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+            cellDequeuedProperly = true
+            
+            return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        
+        class func initializeTableViewMock() -> TableViewMock {
+            let tableViewMock = TableViewMock(frame: CGRect.init(x: 0, y: 0, width: 300, height: 500), style: .plain)
+            tableViewMock.register(AsteroidCellMock.self, forCellReuseIdentifier: "asteroidsList")
+            
+            return tableViewMock
+        }
+    }
+    
+    class AsteroidCellMock: AsteroidTableViewCell {
+        var currentAsteroidViewModel: AsteroidViewModel?
+        
+        override func configureCellWith(asteroidViewModel: AsteroidViewModel) {
+            currentAsteroidViewModel = asteroidViewModel
+        }
+    }
+}
+
 extension AsteroidsListDataServiceTests {
     class TableViewMock: UITableView {
         var cellDequeuedProperly: Bool = false

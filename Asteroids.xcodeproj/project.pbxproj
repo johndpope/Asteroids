@@ -25,6 +25,12 @@
 		83C9FBC51F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */; };
 		83C9FBC71F02CA0900E4F94C /* OrbitalManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */; };
 		83C9FBC91F02CBF700E4F94C /* OrbitalDataCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C9FBC81F02CBF700E4F94C /* OrbitalDataCellTests.swift */; };
+		9A05D0391F0CCC74001A1AD1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0381F0CCC74001A1AD1 /* SearchViewController.swift */; };
+		9A05D03B1F0CCD5C001A1AD1 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D03A1F0CCD5C001A1AD1 /* SearchManager.swift */; };
+		9A05D03D1F0CCEF3001A1AD1 /* SearchManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D03C1F0CCEF3001A1AD1 /* SearchManagerTests.swift */; };
+		9A05D03F1F0CDA89001A1AD1 /* SearchDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D03E1F0CDA89001A1AD1 /* SearchDataServiceTests.swift */; };
+		9A05D0411F0CDAD9001A1AD1 /* SearchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0401F0CDAD9001A1AD1 /* SearchDataService.swift */; };
+		9A05D0471F0CE179001A1AD1 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0461F0CE179001A1AD1 /* SearchViewControllerTests.swift */; };
 		9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917421EF7E584003B6F25 /* AppDelegate.swift */; };
 		9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917461EF7E584003B6F25 /* Main.storyboard */; };
 		9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917491EF7E584003B6F25 /* Assets.xcassets */; };
@@ -91,6 +97,12 @@
 		83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrbitalDataTableViewCell.swift; path = View/OrbitalDataTableViewCell.swift; sourceTree = "<group>"; };
 		83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitalManagerTests.swift; sourceTree = "<group>"; };
 		83C9FBC81F02CBF700E4F94C /* OrbitalDataCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitalDataCellTests.swift; sourceTree = "<group>"; };
+		9A05D0381F0CCC74001A1AD1 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Controller/SearchViewController.swift; sourceTree = "<group>"; };
+		9A05D03A1F0CCD5C001A1AD1 /* SearchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchManager.swift; path = Model/SearchManager.swift; sourceTree = "<group>"; };
+		9A05D03C1F0CCEF3001A1AD1 /* SearchManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchManagerTests.swift; sourceTree = "<group>"; };
+		9A05D03E1F0CDA89001A1AD1 /* SearchDataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataServiceTests.swift; sourceTree = "<group>"; };
+		9A05D0401F0CDAD9001A1AD1 /* SearchDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDataService.swift; path = Controller/SearchDataService.swift; sourceTree = "<group>"; };
+		9A05D0461F0CE179001A1AD1 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
 		9A19173F1EF7E584003B6F25 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1917421EF7E584003B6F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1917471EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +166,7 @@
 				9A1917571EF7E584003B6F25 /* AsteroidModelsTests.swift */,
 				8325BD221EF99A6700E8985D /* AsteroidManagerTests.swift */,
 				83C9FBC61F02CA0900E4F94C /* OrbitalManagerTests.swift */,
+				9A05D03C1F0CCEF3001A1AD1 /* SearchManagerTests.swift */,
 			);
 			name = TestModels;
 			sourceTree = "<group>";
@@ -164,6 +177,8 @@
 				8325BD151EF8392900E8985D /* AsteroidsViewControllerTests.swift */,
 				8325BD191EF8453700E8985D /* AsteroidsListDataServiceTests.swift */,
 				83C9FBC21F02BB0F00E4F94C /* OrbitalDataServiceTests.swift */,
+				9A05D0461F0CE179001A1AD1 /* SearchViewControllerTests.swift */,
+				9A05D03E1F0CDA89001A1AD1 /* SearchDataServiceTests.swift */,
 			);
 			name = TestControllers;
 			sourceTree = "<group>";
@@ -245,6 +260,7 @@
 				9A1917721EF7E5B6003B6F25 /* Asteroid.swift */,
 				8325BD1B1EF9889F00E8985D /* AsteroidManager.swift */,
 				9AB90EDC1F02A0BD005308F3 /* OrbitalManager.swift */,
+				9A05D03A1F0CCD5C001A1AD1 /* SearchManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -280,6 +296,8 @@
 				8325BD0E1EF835A800E8985D /* SettingsViewController.swift */,
 				9AB90ED81F028771005308F3 /* OrbitalDetailViewController.swift */,
 				9AB90EDE1F02A2DF005308F3 /* OrbitalDataService.swift */,
+				9A05D0381F0CCC74001A1AD1 /* SearchViewController.swift */,
+				9A05D0401F0CDAD9001A1AD1 /* SearchDataService.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -471,7 +489,9 @@
 				8325BD1E1EF9914300E8985D /* AsteroidTableViewCell.swift in Sources */,
 				9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */,
 				9A19177B1EF7FD31003B6F25 /* AsteroidsViewController.swift in Sources */,
+				9A05D0391F0CCC74001A1AD1 /* SearchViewController.swift in Sources */,
 				83C9FBC51F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift in Sources */,
+				9A05D0411F0CDAD9001A1AD1 /* SearchDataService.swift in Sources */,
 				9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */,
 				9A1917731EF7E5B6003B6F25 /* Asteroid.swift in Sources */,
 				8325BD1C1EF9889F00E8985D /* AsteroidManager.swift in Sources */,
@@ -482,6 +502,7 @@
 				9AB90EDB1F029D2A005308F3 /* Protocols.swift in Sources */,
 				83C9FBBF1EFD845F00E4F94C /* Date+Calendar.swift in Sources */,
 				8325BD181EF83D5500E8985D /* AsteroidsListDataService.swift in Sources */,
+				9A05D03B1F0CCD5C001A1AD1 /* SearchManager.swift in Sources */,
 				9AB90EDF1F02A2DF005308F3 /* OrbitalDataService.swift in Sources */,
 				8325BD0F1EF835A800E8985D /* SettingsViewController.swift in Sources */,
 			);
@@ -491,13 +512,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A05D03F1F0CDA89001A1AD1 /* SearchDataServiceTests.swift in Sources */,
 				83C9FBC31F02BB0F00E4F94C /* OrbitalDataServiceTests.swift in Sources */,
+				9A05D0471F0CE179001A1AD1 /* SearchViewControllerTests.swift in Sources */,
 				8325BD231EF99A6700E8985D /* AsteroidManagerTests.swift in Sources */,
 				8325BD1A1EF8453700E8985D /* AsteroidsListDataServiceTests.swift in Sources */,
 				8325BD261EF99CC400E8985D /* AsteroidCellTests.swift in Sources */,
 				8325BD211EF995D700E8985D /* MockExtensions.swift in Sources */,
 				9A1917581EF7E584003B6F25 /* AsteroidModelsTests.swift in Sources */,
 				83C9FBC91F02CBF700E4F94C /* OrbitalDataCellTests.swift in Sources */,
+				9A05D03D1F0CCEF3001A1AD1 /* SearchManagerTests.swift in Sources */,
 				8325BD161EF8392900E8985D /* AsteroidsViewControllerTests.swift in Sources */,
 				83C9FBC71F02CA0900E4F94C /* OrbitalManagerTests.swift in Sources */,
 			);

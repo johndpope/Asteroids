@@ -346,8 +346,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="3rN-LA-I3N" kind="relationship" relationship="viewControllers" id="Trh-PK-Axc"/>
-                        <segue destination="2E7-Lb-b8a" kind="relationship" relationship="viewControllers" id="2Hr-5i-d2y"/>
                         <segue destination="e9Q-xZ-5Sj" kind="relationship" relationship="viewControllers" id="h0D-AP-9DY"/>
+                        <segue destination="2E7-Lb-b8a" kind="relationship" relationship="viewControllers" id="2Hr-5i-d2y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxd-0W-qHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,10 +431,10 @@
             </objects>
             <point key="canvasLocation" x="1084" y="791"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="hYq-qm-45S">
             <objects>
-                <viewController id="rOX-VQ-qAQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchVC" id="rOX-VQ-qAQ" customClass="SearchViewController" customModule="Asteroids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FhM-PQ-JNl"/>
                         <viewControllerLayoutGuide type="bottom" id="owD-hs-77T"/>
@@ -442,19 +442,142 @@
                     <view key="view" contentMode="scaleToFill" id="Kyj-O2-X7p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXu-BJ-h06">
+                                <rect key="frame" x="16" y="72" width="343" height="30"/>
+                                <state key="normal" title="Choose date"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="177" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8pD-Zt-boF">
+                                <rect key="frame" x="0.0" y="110" width="375" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="asteroidsList" id="jHF-6J-rmZ" customClass="AsteroidTableViewCell" customModule="Asteroids" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="177"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jHF-6J-rmZ" id="rNu-Gw-xs1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-LU-PzL" customClass="AsteroidView" customModule="Asteroids" customModuleProvider="target">
+                                                    <rect key="frame" x="10" y="10" width="355" height="156.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="JHg-Xg-ztk">
+                                                            <rect key="frame" x="8" y="36.5" width="339" height="54"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvv-gD-5ZJ">
+                                                            <rect key="frame" x="8" y="98.5" width="339" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-rE-lbl">
+                                                            <rect key="frame" x="8" y="8" width="339" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzj-1h-1a5">
+                                                            <rect key="frame" x="8" y="127.5" width="339" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrY-Mc-E3H">
+                                                            <rect key="frame" x="325" y="8" width="22" height="22"/>
+                                                            <connections>
+                                                                <segue destination="jec-z7-71U" kind="showDetail" identifier="Show Asteroid Detail" id="VbN-Jx-IvX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.69803921570000005" green="0.87450980389999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="8w3-rE-lbl" firstAttribute="top" secondItem="QVq-LU-PzL" secondAttribute="top" constant="8" id="8Zy-hK-flO"/>
+                                                        <constraint firstItem="JHg-Xg-ztk" firstAttribute="centerX" secondItem="QVq-LU-PzL" secondAttribute="centerX" id="AYg-0T-yK5"/>
+                                                        <constraint firstItem="Yzj-1h-1a5" firstAttribute="leading" secondItem="QVq-LU-PzL" secondAttribute="leading" constant="8" id="BOT-qc-aZW"/>
+                                                        <constraint firstItem="Jvv-gD-5ZJ" firstAttribute="leading" secondItem="QVq-LU-PzL" secondAttribute="leading" constant="8" id="FKD-Wu-7M0"/>
+                                                        <constraint firstItem="8w3-rE-lbl" firstAttribute="leading" secondItem="QVq-LU-PzL" secondAttribute="leading" constant="8" id="TH9-gz-P84"/>
+                                                        <constraint firstItem="Yzj-1h-1a5" firstAttribute="top" secondItem="Jvv-gD-5ZJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Vwz-OW-uEu"/>
+                                                        <constraint firstItem="JHg-Xg-ztk" firstAttribute="top" secondItem="8w3-rE-lbl" secondAttribute="bottom" constant="8" symbolic="YES" id="XAh-ma-IQY"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Jvv-gD-5ZJ" secondAttribute="trailing" constant="8" id="Xcs-pg-GFO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Yzj-1h-1a5" secondAttribute="bottom" constant="8" id="aDj-He-b27"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JHg-Xg-ztk" secondAttribute="trailing" constant="8" id="f1i-il-fYr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Yzj-1h-1a5" secondAttribute="trailing" constant="8" id="gom-Jb-QYQ"/>
+                                                        <constraint firstItem="JHg-Xg-ztk" firstAttribute="leading" secondItem="QVq-LU-PzL" secondAttribute="leading" constant="8" id="krR-kK-rQF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="OrY-Mc-E3H" secondAttribute="trailing" constant="8" id="mft-ad-ENZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="8w3-rE-lbl" secondAttribute="trailing" constant="8" id="pUD-Ce-JjJ"/>
+                                                        <constraint firstItem="OrY-Mc-E3H" firstAttribute="top" secondItem="QVq-LU-PzL" secondAttribute="top" constant="8" id="pzc-21-K0a"/>
+                                                        <constraint firstItem="Jvv-gD-5ZJ" firstAttribute="top" secondItem="JHg-Xg-ztk" secondAttribute="bottom" constant="8" symbolic="YES" id="z38-L3-Ir3"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="2" height="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="_clipsToBounds" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="QVq-LU-PzL" secondAttribute="bottom" constant="10" id="Ba1-QV-P7J"/>
+                                                <constraint firstItem="QVq-LU-PzL" firstAttribute="top" secondItem="rNu-Gw-xs1" secondAttribute="top" constant="10" id="Vtg-1G-tfm"/>
+                                                <constraint firstAttribute="trailing" secondItem="QVq-LU-PzL" secondAttribute="trailing" constant="10" id="dkj-01-U77"/>
+                                                <constraint firstItem="QVq-LU-PzL" firstAttribute="leading" secondItem="rNu-Gw-xs1" secondAttribute="leading" constant="10" id="zEK-Xm-7A0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="asteroidView" destination="QVq-LU-PzL" id="lh4-O0-Sl3"/>
+                                            <outlet property="detailButton" destination="OrY-Mc-E3H" id="xO2-ft-KYp"/>
+                                            <outlet property="diameterLabel" destination="8w3-rE-lbl" id="Hzr-xk-chZ"/>
+                                            <outlet property="distanceLabel" destination="Jvv-gD-5ZJ" id="aYH-b7-fIt"/>
+                                            <outlet property="nameLabel" destination="JHg-Xg-ztk" id="MGT-Th-Rh3"/>
+                                            <outlet property="velocityLabel" destination="Yzj-1h-1a5" id="bgz-Zl-CmE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.56470588239999997" green="0.79215686269999996" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="owD-hs-77T" firstAttribute="top" secondItem="8pD-Zt-boF" secondAttribute="bottom" id="DBN-9I-4rk"/>
+                            <constraint firstItem="DXu-BJ-h06" firstAttribute="leading" secondItem="Kyj-O2-X7p" secondAttribute="leadingMargin" id="LJr-gl-Cuf"/>
+                            <constraint firstItem="DXu-BJ-h06" firstAttribute="trailing" secondItem="Kyj-O2-X7p" secondAttribute="trailingMargin" id="Nyu-yH-c4w"/>
+                            <constraint firstItem="8pD-Zt-boF" firstAttribute="leading" secondItem="Kyj-O2-X7p" secondAttribute="leading" id="O5r-n7-ODm"/>
+                            <constraint firstItem="DXu-BJ-h06" firstAttribute="top" secondItem="FhM-PQ-JNl" secondAttribute="bottom" constant="8" symbolic="YES" id="Rfr-Z2-rM9"/>
+                            <constraint firstAttribute="trailing" secondItem="8pD-Zt-boF" secondAttribute="trailing" id="oQd-dz-4sd"/>
+                            <constraint firstItem="8pD-Zt-boF" firstAttribute="top" secondItem="DXu-BJ-h06" secondAttribute="bottom" constant="8" symbolic="YES" id="tWw-rk-ChJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3M7-M5-hdv"/>
+                    <connections>
+                        <outlet property="asteroidsTableView" destination="8pD-Zt-boF" id="aCn-ex-TcY"/>
+                        <outlet property="dataService" destination="LcK-XR-EoY" id="wm1-Lq-VDG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAa-n4-gry" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="LcK-XR-EoY" customClass="SearchDataService" customModule="Asteroids" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2023.2" y="1519.7901049475263"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ZML-If-W6J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e9Q-xZ-5Sj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3u4-hc-t5B"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="3u4-hc-t5B"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MIa-r8-6Eu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -475,4 +598,7 @@
         <image name="SettingsTabIcon" width="16" height="16"/>
         <image name="icon512.png" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VbN-Jx-IvX"/>
+    </inferredMetricsTieBreakers>
 </document>

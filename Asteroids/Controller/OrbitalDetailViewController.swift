@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
+class OrbitalDetailViewController: UIViewController, AsteroidManagerDelegate {
     
     var asteroidUid = ""
     var asteroidName = ""
@@ -34,7 +34,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     }
     
     //MARK: - Handle request results
-    func handleOrbitalDataResults() {
+    func handleResult() {
         orbitalDataTableView.reloadData()
         activityView.isHidden = true
     }
@@ -49,7 +49,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     }
     
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
-        
+
         // text to share
         var text = "\(NSLocalizedString("We all die", comment: "")) \(asteroidDate) \(NSLocalizedString("from the Asteroid", comment: "")) \(asteroidName)\n\(NSLocalizedString("Orbit Information", comment: "")):\n"
         
