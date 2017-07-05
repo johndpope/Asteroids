@@ -40,12 +40,9 @@ class SearchManager {
         removeAllAsteroids()
         
         //convert date to string
-        let endDateStr = convertDateToDateString(date: date)
+        let dateStr = convertDateToDateString(date: date)
         
-        let startDate = date.dateFromDays(1)
-        let startDateStr = convertDateToDateString(date: startDate)
-        
-        Alamofire.request("\(Constants.apiGetAsteroidsList)?start_date=\(startDateStr)&end_date=\(endDateStr)&detailed=false&api_key=\(Constants.apiKey)").responseJSON { response in
+        Alamofire.request("\(Constants.apiGetAsteroidsList)?start_date=\(dateStr)&end_date=\(dateStr)&detailed=false&api_key=\(Constants.apiKey)").responseJSON { response in
             print(response.result)   // result of response serialization
             
             switch response.result {
@@ -55,7 +52,7 @@ class SearchManager {
                 
                 if countOfElements > 0 {
                         //asteroids for current day
-                        let asteroidsByDay = json[JsonKeys.near_earth_objects.rawValue][endDateStr]
+                        let asteroidsByDay = json[JsonKeys.near_earth_objects.rawValue][dateStr]
                         
                         if asteroidsByDay.count > 0 {
                             
