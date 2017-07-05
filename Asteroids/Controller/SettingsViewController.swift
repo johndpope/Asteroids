@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let settings = ["km","mi"]
+    let settings = ["\(NSLocalizedString("km", comment: ""))","\(NSLocalizedString("mi", comment: ""))"]
     
     //MARK: - View Controller lifecycle
     override func viewDidLoad() {

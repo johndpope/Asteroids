@@ -6,11 +6,16 @@
   Copyright © 2017 olegshamin. All rights reserved.
 */
 "Diameter" = "Diameter";
-"Distance" = "Distance";
-"Velocity" = "Velocity";
+"Distance" = "Distans";
+"Velocity" = "Hastighet";
 "km" = "km";
 "m" = "m";
 "kmh" = "kmh";
 "mph" = "mph";
 "mi" = "mi";
-"lb" = "lb";
+"ft" = "ft";
+"Attention" = "Uppmärksamhet";
+"OK" = "OK";
+"We all die" = "Vi dör alla";
+"from the Asteroid" = "Från asteroiden";
+"Orbit Information" = "Orbit Information";

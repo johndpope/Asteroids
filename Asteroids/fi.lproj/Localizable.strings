@@ -5,12 +5,17 @@
   Created by bu on 04/07/2017.
   Copyright © 2017 olegshamin. All rights reserved.
 */
-"Diameter" = "Diameter";
-"Distance" = "Distance";
-"Velocity" = "Velocity";
+"Diameter" = "Halkaisija";
+"Distance" = "Etäisyys";
+"Velocity" = "Nopeus";
 "km" = "km";
 "m" = "m";
 "kmh" = "kmh";
 "mph" = "mph";
 "mi" = "mi";
-"lb" = "lb";
+"ft" = "ft";
+"Attention" = "Huomio";
+"OK" = "kunnossa";
+"We all die" = "Me kaikki kuolemme";
+"from the Asteroid" = "Asteroidista";
+"Orbit Information" = "Orbit-tiedot";

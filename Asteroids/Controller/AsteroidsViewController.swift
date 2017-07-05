@@ -55,14 +55,14 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
     }
     
     func handleErrorWithMessage(errorMessage: String) {
-        showAlertWithTitle("Внимание", andMessage: errorMessage)
+        showAlertWithTitle("\(NSLocalizedString("Attention", comment: ""))", andMessage: errorMessage)
     }
     
     //MARK: - Actions
     func showAlertWithTitle(_ title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "\(NSLocalizedString("OK", comment: ""))", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             print("OK")
         }

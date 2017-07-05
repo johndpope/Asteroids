@@ -22,9 +22,9 @@ class AsteroidViewModel: Equatable {
     var diameter: String {
         get {
             if Constants.system == System.metric.rawValue {
-                return "\(convertToStringFrom(minDiam: asteroid.diamMetersMin, andMaxDiam: asteroid.diamMetersMax)) м"
+                return "\(convertToStringFrom(minDiam: asteroid.diamMetersMin, andMaxDiam: asteroid.diamMetersMax)) \(NSLocalizedString("m", comment: ""))"
             } else {
-                return "\(convertToStringFrom(minDiam: asteroid.diamFeetMin, andMaxDiam: asteroid.diamFeetMax)) ф"
+                return "\(convertToStringFrom(minDiam: asteroid.diamFeetMin, andMaxDiam: asteroid.diamFeetMax)) \(NSLocalizedString("ft", comment: ""))"
             }
         }
     }
@@ -53,10 +53,10 @@ class AsteroidViewModel: Equatable {
             formatter.maximumFractionDigits = 0
             if Constants.system == System.metric.rawValue {
                 let minDistanceKm = formatter.string(from: NSNumber(value: asteroid.minDistanceKm))
-                return "Дистанция: \(minDistanceKm ?? ("--")) км"
+                return "\(NSLocalizedString("Distance", comment: "")): \(minDistanceKm ?? ("--")) \(NSLocalizedString("km", comment: ""))"
             } else {
                 let minDistanceMiles = formatter.string(from: NSNumber(value: asteroid.minDistanceMiles))
-                return "Дистанция: \(minDistanceMiles ?? ("--")) ми"
+                return "\(NSLocalizedString("Distance", comment: "")): \(minDistanceMiles ?? ("--")) \(NSLocalizedString("mi", comment: ""))"
             }
         }
     }
@@ -71,7 +71,7 @@ class AsteroidViewModel: Equatable {
     func convertToStringFrom(minDiam: Double, andMaxDiam maxDiam: Double) -> String {
         let diamMaxConverted = String(format: "%.0f", maxDiam)
         let diamMinConverted = String(format: "%.0f", minDiam)
-        return "Диаметр: \(diamMinConverted) - \(diamMaxConverted)"
+        return "\(NSLocalizedString("Diameter", comment: "")): \(diamMinConverted) - \(diamMaxConverted)"
     }
     
     static func == (lhs: AsteroidViewModel, rhs: AsteroidViewModel) -> Bool {

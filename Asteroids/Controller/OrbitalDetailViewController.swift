@@ -40,7 +40,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     }
     
     func handleErrorWithMessage(errorMessage: String) {
-        showAlertWithTitle("Внимание", andMessage: errorMessage)
+        showAlertWithTitle("\(NSLocalizedString("Attention", comment: ""))", andMessage: errorMessage)
     }
     
     //MARK: - Actions
@@ -51,7 +51,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     @IBAction func shareButtonPressed(_ sender: UIBarButtonItem) {
         
         // text to share
-        var text = "Скорее всего мы все умрем \(asteroidDate) от астероида под именем \(asteroidName)\nДанные орбиты:\n"
+        var text = "\(NSLocalizedString("We all die", comment: "")) \(asteroidDate) \(NSLocalizedString("from the Asteroid", comment: "")) \(asteroidName)\n\(NSLocalizedString("Orbit Information", comment: "")):\n"
         
         //get orbital data
         for i in 0 ..< orbitalManager.dataCount {
@@ -76,7 +76,7 @@ class OrbitalDetailViewController: UIViewController, OrbitalManagerDelegate {
     func showAlertWithTitle(_ title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+        let okAction = UIAlertAction(title: "\(NSLocalizedString("OK", comment: ""))", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             print("OK")
         }
