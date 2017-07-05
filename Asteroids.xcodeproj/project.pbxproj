@@ -31,6 +31,7 @@
 		9A05D03F1F0CDA89001A1AD1 /* SearchDataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D03E1F0CDA89001A1AD1 /* SearchDataServiceTests.swift */; };
 		9A05D0411F0CDAD9001A1AD1 /* SearchDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0401F0CDAD9001A1AD1 /* SearchDataService.swift */; };
 		9A05D0471F0CE179001A1AD1 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0461F0CE179001A1AD1 /* SearchViewControllerTests.swift */; };
+		9A05D0531F0D0971001A1AD1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05D0521F0D0971001A1AD1 /* CustomButton.swift */; };
 		9A1917431EF7E584003B6F25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1917421EF7E584003B6F25 /* AppDelegate.swift */; };
 		9A1917481EF7E584003B6F25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917461EF7E584003B6F25 /* Main.storyboard */; };
 		9A19174A1EF7E584003B6F25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1917491EF7E584003B6F25 /* Assets.xcassets */; };
@@ -103,6 +104,7 @@
 		9A05D03E1F0CDA89001A1AD1 /* SearchDataServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataServiceTests.swift; sourceTree = "<group>"; };
 		9A05D0401F0CDAD9001A1AD1 /* SearchDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchDataService.swift; path = Controller/SearchDataService.swift; sourceTree = "<group>"; };
 		9A05D0461F0CE179001A1AD1 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		9A05D0521F0D0971001A1AD1 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomButton.swift; path = View/CustomButton.swift; sourceTree = "<group>"; };
 		9A19173F1EF7E584003B6F25 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A1917421EF7E584003B6F25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A1917471EF7E584003B6F25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				8325BD1D1EF9914300E8985D /* AsteroidTableViewCell.swift */,
 				83C9FBC01F016DE000E4F94C /* AsteroidView.swift */,
 				83C9FBC41F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift */,
+				9A05D0521F0D0971001A1AD1 /* CustomButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				9A1917781EF7E5FF003B6F25 /* Constants.swift in Sources */,
 				9A19177B1EF7FD31003B6F25 /* AsteroidsViewController.swift in Sources */,
 				9A05D0391F0CCC74001A1AD1 /* SearchViewController.swift in Sources */,
+				9A05D0531F0D0971001A1AD1 /* CustomButton.swift in Sources */,
 				83C9FBC51F02BFEC00E4F94C /* OrbitalDataTableViewCell.swift in Sources */,
 				9A05D0411F0CDAD9001A1AD1 /* SearchDataService.swift in Sources */,
 				9A1917751EF7E5D7003B6F25 /* AsteroidViewModel.swift in Sources */,

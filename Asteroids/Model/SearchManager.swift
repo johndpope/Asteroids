@@ -42,7 +42,10 @@ class SearchManager {
         //convert date to string
         let endDateStr = convertDateToDateString(date: date)
         
-        Alamofire.request("\(Constants.apiGetAsteroidsList)?end_date=\(endDateStr)&detailed=false&api_key=\(Constants.apiKey)").responseJSON { response in
+        let startDate = date.dateFromDays(1)
+        let startDateStr = convertDateToDateString(date: startDate)
+        
+        Alamofire.request("\(Constants.apiGetAsteroidsList)?start_date=\(startDateStr)&end_date=\(endDateStr)&detailed=false&api_key=\(Constants.apiKey)").responseJSON { response in
             print(response.result)   // result of response serialization
             
             switch response.result {

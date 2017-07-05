@@ -12,10 +12,13 @@ class SearchViewController: UIViewController, AsteroidManagerDelegate {
 
     @IBOutlet weak var asteroidsTableView: UITableView!
     @IBOutlet var dataService: SearchDataService!
+    @IBOutlet weak var chooseDateButton: UIButton!
+    @IBOutlet weak var activityView: UIView!
     
     var searchManager: SearchManager = SearchManager()
     
     var date = Date()
+    var isShowPicker = false
     
     //MARK: - View Controller Lifecycle
     
@@ -31,16 +34,17 @@ class SearchViewController: UIViewController, AsteroidManagerDelegate {
         asteroidsTableView.estimatedRowHeight = 44.0
         asteroidsTableView.rowHeight = UITableViewAutomaticDimension
         
-        searchManager.getAsteroidsForDate(date: date)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.activityView.isHidden = true
         asteroidsTableView.reloadData()
     }
     
     //MARK: - Handle request results
     func handleResult() {
         asteroidsTableView.reloadData()
+        self.activityView.isHidden = true
     }
     
     func handleErrorWithMessage(errorMessage: String) {
@@ -48,6 +52,31 @@ class SearchViewController: UIViewController, AsteroidManagerDelegate {
     }
     
     //MARK: - Actions
+    
+    @IBAction func chooseDatePressed(_ sender: UIButton) {
+        var asteroidsTableFrame = asteroidsTableView.frame
+        
+        if isShowPicker {
+            asteroidsTableFrame.origin.y -= 216
+            isShowPicker = false
+            searchManager.getAsteroidsForDate(date: date)
+            chooseDateButton.setTitle(convertDateToDateString(date: date), for: .normal)
+            self.activityView.isHidden = false
+        } else {
+            asteroidsTableFrame.origin.y += 216
+            isShowPicker = true
+            self.activityView.isHidden = true
+        }
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.asteroidsTableView.frame = asteroidsTableFrame
+        })
+    }
+    
+    @IBAction func dateChanged(_ sender: UIDatePicker) {
+        date = sender.date
+    }
+    
     func showAlertWithTitle(_ title: String, andMessage message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
