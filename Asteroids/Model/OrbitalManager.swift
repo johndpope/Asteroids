@@ -32,7 +32,6 @@ class OrbitalManager {
         }
     }
     
-    
     //MARK: - Request
     func getOrbitDetail(asteroidUid: String) {
         
