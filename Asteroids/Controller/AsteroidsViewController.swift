@@ -40,7 +40,12 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
         let today = Date()
         let todayPlus7 = today.dateFromDays(7)
         asteroidManager.getAsteroids(startDate: today, endDate: todayPlus7)
-        zoomInAnimation()
+        
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        
+        DispatchQueue.main.async {
+            self.zoomInAnimation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +55,7 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
     //MARK: - Handle request results
     func handleResult() {
         isLoading = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
         tableFooterView.isHidden = true
         asteroidsListTableView.reloadData()
     }
@@ -105,7 +111,9 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
                     self.loadingView.isHidden = true
                 })
             } else {
-                self.zoomOutAnimation()
+                DispatchQueue.main.async {
+                    self.zoomOutAnimation()
+                }
             }
         })
     }
@@ -116,7 +124,9 @@ class AsteroidsViewController: UIViewController, AsteroidManagerDelegate {
             self.asteroidImageView.center = self.view.center
         }, completion: {
             (value: Bool) in
-            self.zoomInAnimation()
+            DispatchQueue.main.async {
+                self.zoomInAnimation()
+            }
         })
     }
 }

@@ -17,7 +17,8 @@ class SearchViewControllerTests: XCTestCase {
         super.setUp()
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "SearchVC") as! SearchViewController
-        _ = sut.view    }
+        _ = sut.view
+    }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
